@@ -4,8 +4,7 @@ import App from './App.vue'
 // import 'element-ui/lib/theme-chalk/index.css';
 import router from './router'
 import { Row,Col,MenuItem,Menu } from 'element-ui';
-
-Vue.config.productionTip = false
+// Vue.config.productionTip = false
 // Vue.use(ElementUI);
 Vue.use(Row)
 Vue.use(Col)
