@@ -26,10 +26,14 @@ export default {
         // display: flex;
         position:fixed;
         top:0;
-        background-color: #222;
+        background-color: red;
         width: 100%;
         height: 68px; 
         line-height: 68px;
     }
+</style>
+
+<style>
+
 </style>
 
