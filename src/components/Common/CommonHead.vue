@@ -1,6 +1,17 @@
 <template>
     <div class='head'>
-        公共头部
+        <el-row>
+            <el-col :span="8">
+                <div class="logoName">
+                    大禹logo
+                </div>
+            </el-col>
+            <el-col :span="16">
+                <div class="tabs">
+                    tab
+                </div>
+            </el-col>
+        </el-row>
     </div>
 </template>
 
@@ -12,7 +23,9 @@ export default {
 
 <style lang="less" scoped>
     .head{
+        // display: flex;
         position:fixed;
+        top:0;
         background-color: #222;
         width: 100%;
         height: 68px; 
