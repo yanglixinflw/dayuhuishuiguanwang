@@ -4,7 +4,6 @@
         <img alt="解决方案配图" src="../assets/solution.png"/>
         <p>助力智慧农业</p>
     </div>
-    
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
 </template>
@@ -35,5 +34,4 @@
             margin: auto
         }
     }
-    
 </style>
