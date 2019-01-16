@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-    <div id="nav">
-       <CommonHead/>
+    <CommonHead/>
+    <div id="content">
+      <router-view/>
     </div>
-    <router-view/>
+    
   </div>
 </template>
 
@@ -14,6 +15,9 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+#content{
+  margin-top: 68px;
 }
 </style>
 
