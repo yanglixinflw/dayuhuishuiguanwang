@@ -1,6 +1,6 @@
 <template>
     <div>
-        <CommonHead/>
+        <!-- <CommonHead/> -->
         <CompanyProfile/>
     </div>
 </template>
