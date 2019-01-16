@@ -19,7 +19,7 @@
               <!-- <router-link to="">Home</router-link> -->
               首页
             </el-menu-item>
-            <el-menu-item index="/about">
+            <el-menu-item index="/solution">
               <!-- <router-link to="">About</router-link> -->
               解决方案
             </el-menu-item>

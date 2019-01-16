@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="solution">
     <SolutionImg/>
   </div>
 </template>
