@@ -48,7 +48,7 @@ export default {
     },
     methods: {
       handleSelect(key, keyPath) {
-        console.log(key,keyPath);
+        // console.log(key,keyPath);
         console.log(this)
       }
     }
@@ -75,6 +75,7 @@ export default {
           .el-menu--horizontal{
             border-bottom:0;
             .el-menu-item{
+              width:50px;
               height: 68px;
               line-height: 90px;
               padding: 0;
