@@ -91,6 +91,26 @@ export default {
         }
     }
 </style>
+<style lang="less">
+.navMenu{
+          .el-menu--horizontal{
+            border-bottom:0;
+            .el-menu-item{
+              height: 68px;
+              line-height: 90px;
+              padding: 0;
+              margin: 0 58px ;
+              color: #888888;
+              font-size: 12px;
+            }
+            .is-active{
+              color:#3E71D0;
+              border-bottom: 2px solid #3E71D0;
+            }
+          }
+        }
+</style>
+>
 
 
 
