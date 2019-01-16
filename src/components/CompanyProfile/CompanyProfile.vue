@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="companyProfile">
         这是公司介绍页
     </div>
 </template>
@@ -10,3 +10,10 @@ export default {
     
 }
 </script>
+
+<style lang="less" scoped>
+    .companyProfile{
+        padding-top:68px; 
+    }
+</style>
+
