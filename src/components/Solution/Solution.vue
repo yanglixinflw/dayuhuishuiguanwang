@@ -1,7 +1,7 @@
 <template>
     <div class="solution">
         <div class="bannar">
-            <img alt="解决方案banner图" src="../../assets/solution.png"/>
+            <img alt="解决方案banner图" src="../../assets/solution.jpg"/>
         </div>
         
     </div>
