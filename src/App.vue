@@ -3,8 +3,7 @@
     <CommonHead/>
     <div id="content">
       <router-view/>
-    </div>
-    
+    </div> 
   </div>
 </template>
 

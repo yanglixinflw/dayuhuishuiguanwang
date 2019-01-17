@@ -1,16 +1,16 @@
 <template>
-    <div class="solutionImg">
+    <div class="solutionBanner">
         <img alt="解决方案配图" src="../../assets/solution.png"/>
         <p>助力智慧农业</p>
     </div>
 </template>
 <script>
     export default {
-        name:"solutionImg",  
+        name:"solutionBanner",  
     }
 </script>
 <style lang="less" scoped>
-    .solutionImg{
+    .solutionBanner{
         width: 100%;
         height: 600px;
         position: relative;
