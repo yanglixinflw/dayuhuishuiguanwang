@@ -3,12 +3,8 @@
     <CommonHead/>
     <div id="content">
       <router-view/>
-<<<<<<< HEAD
-    </div> 
-=======
     </div>
     <CommonFooter />
->>>>>>> 27ab44f2306e88a8cb75f891a5052c43dcac1837
   </div>
 </template>
 
