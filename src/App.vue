@@ -9,9 +9,9 @@
 </template>
 
 <style lang="less">
-#content{
-  margin-top: 68px;
-}
+// #content{
+//   margin-top: 68px;
+// }
 </style>
 
 <script>
