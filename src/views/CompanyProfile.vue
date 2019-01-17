@@ -1,6 +1,6 @@
 <template>
     <div>
-        <CompanyProfile/>
+        <CompanyProfileBanner/>
     </div>
 </template>
 
@@ -9,7 +9,7 @@ import CompanyProfile from '@/components/CompanyProfile/CompanyProfile.vue';
 export default {
     name: "companyProfile",
     components: {
-        CompanyProfile,
+        CompanyProfileBanner,
     },
 };
 </script>
