@@ -134,9 +134,28 @@
                 .contentRight{
                     .el-tabs,.el-tabs--left{
                         .el-tabs__header{
+                            .el-tabs__nav-wrap{
+                                overflow: visible!important;
+                                .el-tabs__nav-scroll{
+                                     overflow: visible!important;
+                                }
+                            }
                             margin-right:42px;
                             width: 76px;
+                            border-right:12px;
                             .el-tabs__nav{
+                                // border-right:12px
+                                .el-tabs__active-bar{
+                                    width:0;
+                                    height:0 !important;
+                                    right:-12px;
+                                    top:32px;
+                                    z-index:100;
+                                    border-top:12px solid transparent;
+                                    border-bottom:12px solid transparent;
+                                    border-left:12px solid #2463cc;
+                                    background:#fff;
+                                }
                                 .is-active{
                                     background:#2463cc!important;
                                 }
