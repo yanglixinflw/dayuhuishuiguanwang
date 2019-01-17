@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import CompanyProfile from '@/components/CompanyProfile/CompanyProfile.vue';
+import CompanyProfileBanner from '@/components/CompanyProfile/CompanyProfileBanner.vue';
 export default {
-    name: "companyProfile",
+    name: "companyProfileBanner",
     components: {
         CompanyProfileBanner,
     },
