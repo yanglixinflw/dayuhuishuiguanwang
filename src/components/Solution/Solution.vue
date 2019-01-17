@@ -10,11 +10,9 @@
 </script>
 <style lang="less" scoped>
     .solution{
-        width: 100%;
-        height: 600px;
         img{
             width: 100%;
-            height: 100%;
+            height: 600px;
         }
     }
 </style>

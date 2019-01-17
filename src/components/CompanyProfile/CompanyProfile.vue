@@ -4,8 +4,8 @@
          <section>
              <div class="title">
                  <h1>我们的优势</h1>
-                 <div>Our Advantages</div>
-                 <img src='../../assets/icon.png'/>
+                 <div class='EnTitle'>Our Advantages</div>
+                 <img class="icon" src='../../assets/icon.png'/>
              </div>
          </section>
     </div>
@@ -25,9 +25,19 @@ export default {
             width: 100%;
             height: 100%;
         }
+        .title{
+            h1{
+                font-size: 14px;
+            }
+            .EnTitle{
+                font-size: 28px;
+                font-weight: bold;
+            }
+            .icon{
+                width: 40px;
+            }
+        }
     }
-    .title{
-        
-    }
+    
 </style>
 
