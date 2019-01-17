@@ -1,5 +1,6 @@
 <template>
     <div class="footer">
+        <div class=""></div>
         <div class='footNavList'>
             <ul>
                 <li>农村高效节水工程</li>
@@ -28,10 +29,20 @@ export default {
             margin:0 256px;
             border-top: 2px solid #979797;
             ul{
-                padding: 0 84px;
+                margin-top:12px;
+                padding: 0;
                 list-style: none;
                 display: flex;
                 justify-content: space-between;
+                li{
+                    border-left:1px solid #C0C0C0;
+                    font-size: 14px;
+                    color:#979797;
+                    padding: 0 84px;
+                }
+                li:first-child{
+                    border-left:0;
+                }
             }
         }
     }

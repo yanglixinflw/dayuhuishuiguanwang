@@ -59,8 +59,8 @@ export default {
 <style lang="less" scoped>
     .head{
         // display: flex;
-        position:fixed;
-        top:0;
+        // position:fixed;
+        // top:0;
         background-color: #fff;
         width: 100%;
         height: 68px; 
