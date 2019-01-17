@@ -1,6 +1,6 @@
 <template>
     <div class="companyProfile">
-         <img alt="公司介绍banner图" src="../../assets/companyProfile.png"/>
+         <img alt="公司介绍banner图" src="../../assets/CompanyProfile.png"/>
          <section>
              <div class="title">
                  <h1>我们的优势</h1>
