@@ -11,7 +11,7 @@
           <p>微信公众号</p>
         </div>
         <div class="contact">
-          <div style="display:flex;width:520px;justify-content: space-between;">
+          <div style="display:flex;width:166%;justify-content: space-between;">
             <p class="telephone">0571-82215904</p>
             <div>
               <p class="mailbox">邮箱：hskj@dyjs.com</p>
