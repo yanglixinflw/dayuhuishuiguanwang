@@ -1,6 +1,9 @@
 <template>
     <div class="solution">
-        <img alt="解决方案banner图" src="../../assets/solution.png"/>
+        <div class="bannar">
+            <img alt="解决方案banner图" src="../../assets/solution.png"/>
+        </div>
+        
     </div>
 </template>
 <script>

@@ -43,13 +43,13 @@ export default {
   name: "CommonHead",
     data() {
         return {
-            activeIndex: '/',
+            activeIndex: window.location.pathname,
         };
     },
     methods: {
       handleSelect(key, keyPath) {
         // console.log(key,keyPath);
-        // console.log(this)
+        this.activeIndex=key
       }
     }
   
