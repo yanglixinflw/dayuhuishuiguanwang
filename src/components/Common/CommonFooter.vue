@@ -110,6 +110,10 @@ export default {
         font-size: 14px;
         color: #979797;
         text-align: center;
+        &:hover{
+            color: #2463CC;
+            cursor: pointer;
+        }
       }
       li:first-child {
         border-left: 0;
