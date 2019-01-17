@@ -1,15 +1,15 @@
 <template>
     <div>
-        <CompanyProfileBanner/>
+        <CompanyProfile/>
     </div>
 </template>
 
 <script>
-import CompanyProfileBanner from '@/components/CompanyProfile/CompanyProfileBanner.vue';
+import CompanyProfile from '@/components/CompanyProfile/CompanyProfile.vue';
 export default {
-    name: "companyProfileBanner",
+    name: "companyProfile",
     components: {
-        CompanyProfileBanner,
+        CompanyProfile,
     },
 };
 </script>
