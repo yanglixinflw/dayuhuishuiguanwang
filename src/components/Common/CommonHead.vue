@@ -1,6 +1,6 @@
 <template>
   <div class="head">
-    <el-row>
+    <el-row type="flex">
       <el-col :span="10">
         <div class="logoName">
           <img src='../../assets/logo.png' />
@@ -65,9 +65,6 @@ export default {
         width: 100%;
         height: 68px; 
         line-height: 68px;
-        .el-col::after {
-          clear: both;
-        }
         .logoName{
           text-align: center;
           img{
@@ -94,6 +91,15 @@ export default {
             }
           }
         }
+    }
+    @media(max-width: 1139px){
+      .head{
+        .navMenu{
+          .el-menu-item{
+            margin: 0 52px !important;
+          }
+        }
+      }  
     }
 </style>
 
