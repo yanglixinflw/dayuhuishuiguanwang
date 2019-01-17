@@ -13,7 +13,7 @@ export default {
 
 <style lang="less" scoped>
     .companyProfile{
-        padding-top:68px; 
+        // padding-top:68px; 
     }
 </style>
 

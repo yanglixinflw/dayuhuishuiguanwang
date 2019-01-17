@@ -49,7 +49,7 @@ export default {
     methods: {
       handleSelect(key, keyPath) {
         // console.log(key,keyPath);
-        console.log(this)
+        // console.log(this)
       }
     }
   
@@ -66,12 +66,14 @@ export default {
         height: 68px; 
         line-height: 68px;
         .logoName{
+          text-align: center;
           img{
             position: relative;
             top: 20px;
           }
         }
         .navMenu{
+          text-align: center;
           .el-menu--horizontal{
             border-bottom:0;
             .el-menu-item{
@@ -84,33 +86,13 @@ export default {
               font-size: 12px;
             }
             .is-active{
-              color:#3E71D0;
-              border-bottom: 2px solid #3E71D0;
+              color:#2463CC;
+              border-bottom: 2px solid #2463CC;
             }
           }
         }
     }
 </style>
-<style lang="less">
-.navMenu{
-          .el-menu--horizontal{
-            border-bottom:0;
-            .el-menu-item{
-              height: 68px;
-              line-height: 90px;
-              padding: 0;
-              margin: 0 58px ;
-              color: #888888;
-              font-size: 12px;
-            }
-            .is-active{
-              color:#3E71D0;
-              border-bottom: 2px solid #3E71D0;
-            }
-          }
-        }
-</style>
->
 
 
 
