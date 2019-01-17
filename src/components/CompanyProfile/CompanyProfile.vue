@@ -23,10 +23,42 @@
                                     <div class="description">通过与中国水利水电科学研究院、清华大学、日本筑波大学等进行战略合作和自主研发，形成了一套自己特有的覆盖“三农三水”全领域、全产业链、全生命周期的自动化信息集成处理系统，并已成功运用到各类项目中；</div>
                                 </div>
                             </el-tab-pane>
-                            <el-tab-pane label="02">02</el-tab-pane>
-                            <el-tab-pane label="03">03</el-tab-pane>
-                            <el-tab-pane label="04">04</el-tab-pane>
-                            <el-tab-pane label="05">05</el-tab-pane>
+                            <el-tab-pane label="02">
+                                <div>
+                                    <div class="img">
+                                        <img src='../../assets/advantages2.jpg'/>
+                                    </div>
+                                    <div class="line"></div>
+                                    <div class="description">通过与中国水利水电科学研究院、清华大学、日本筑波大学等进行战略合作和自主研发，形成了一套自己特有的覆盖“三农三水”全领域、全产业链、全生命周期的自动化信息集成处理系统，并已成功运用到各类项目中；</div>
+                                </div>
+                            </el-tab-pane>
+                            <el-tab-pane label="03">
+                                <div>
+                                    <div class="img">
+                                        <img src='../../assets/advantages2.jpg'/>
+                                    </div>
+                                    <div class="line"></div>
+                                    <div class="description">通过与中国水利水电科学研究院、清华大学、日本筑波大学等进行战略合作和自主研发，形成了一套自己特有的覆盖“三农三水”全领域、全产业链、全生命周期的自动化信息集成处理系统，并已成功运用到各类项目中；</div>
+                                </div>
+                            </el-tab-pane>
+                            <el-tab-pane label="04">
+                                <div>
+                                    <div class="img">
+                                        <img src='../../assets/advantages2.jpg'/>
+                                    </div>
+                                    <div class="line"></div>
+                                    <div class="description">通过与中国水利水电科学研究院、清华大学、日本筑波大学等进行战略合作和自主研发，形成了一套自己特有的覆盖“三农三水”全领域、全产业链、全生命周期的自动化信息集成处理系统，并已成功运用到各类项目中；</div>
+                                </div>
+                            </el-tab-pane>
+                            <el-tab-pane label="05">
+                                <div>
+                                    <div class="img">
+                                        <img src='../../assets/advantages2.jpg'/>
+                                    </div>
+                                    <div class="line"></div>
+                                    <div class="description">通过与中国水利水电科学研究院、清华大学、日本筑波大学等进行战略合作和自主研发，形成了一套自己特有的覆盖“三农三水”全领域、全产业链、全生命周期的自动化信息集成处理系统，并已成功运用到各类项目中；</div>
+                                </div>
+                            </el-tab-pane>
                         </el-tabs>
                     </div>
                 </div>
