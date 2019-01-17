@@ -2,7 +2,11 @@
     <div class="companyProfile">
          <img alt="公司介绍banner图" src="../../assets/companyProfile.png"/>
          <section>
-
+             <div class="title">
+                 <h1>我们的优势</h1>
+                 <div>Our Advantages</div>
+                 <img src='../../assets/icon.png'/>
+             </div>
          </section>
     </div>
 </template>
@@ -21,6 +25,9 @@ export default {
             width: 100%;
             height: 100%;
         }
+    }
+    .title{
+        
     }
 </style>
 
