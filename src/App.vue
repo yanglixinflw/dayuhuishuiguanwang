@@ -9,8 +9,11 @@
 </template>
 
 <style lang="less">
-#content{
-  margin-top: 68px;
+// #content{
+//   margin-top: 68px;
+// }
+*{
+  margin:0;padding:0
 }
 </style>
 
