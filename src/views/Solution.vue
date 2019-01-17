@@ -1,14 +1,14 @@
 <template>
   <div class="solution">
-    <SolutionBanner/>
+    <Solution/>
   </div>
 </template>
 <script>
-    import SolutionBanner from '@/components/Solution/SolutionBanner.vue'
+    import Solution from '@/components/Solution/Solution.vue'
     export default {
         name: "solution",
         components: {
-            SolutionBanner
+            Solution
         }
     };
 </script>

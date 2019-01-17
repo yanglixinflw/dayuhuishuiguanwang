@@ -65,6 +65,9 @@ export default {
         width: 100%;
         height: 68px; 
         line-height: 68px;
+        .el-col::after {
+          clear: both;
+        }
         .logoName{
           text-align: center;
           img{
