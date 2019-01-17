@@ -1,7 +1,7 @@
 <template>
-  <div class="solution">
-    <div class="banner">
-      <img alt="解决方案banner图" src="../../assets/solution.jpg">
+  <div class="solution" ondragstart="return false;">
+    <div class="banner" >
+      <img alt="解决方案banner图" src="../../assets/solution.jpg"/>
     </div>
     <div class="program">
         <el-tabs stretch @tab-click="handleTabClick" >
@@ -87,7 +87,7 @@ export default {
   methods: {
       handleTabClick(tab, event) {
         console.log(tab);
-      }
+      },
     }
 };
 </script>
