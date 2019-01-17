@@ -9,12 +9,16 @@
                     <img class="icon" src='../../assets/icon.png'/>
                 </div>
                 <div class="content">
-                    <div class="contentLeft"></div>
+                    <div class="contentLeft">
+                        <img src='../../assets/advantages.jpg'/>
+                    </div>
                     <div class="contentRight">
                         <el-tabs :tab-position="tabPosition" style="height: 462px;">
                             <el-tab-pane label="01">
                                 <div>
-                                    <div class="img"></div>
+                                    <div class="img">
+                                        <img src='../../assets/advantages2.jpg'/>
+                                    </div>
                                     <div class="line"></div>
                                     <div class="description">通过与中国水利水电科学研究院、清华大学、日本筑波大学等进行战略合作和自主研发，形成了一套自己特有的覆盖“三农三水”全领域、全产业链、全生命周期的自动化信息集成处理系统，并已成功运用到各类项目中；</div>
                                 </div>
@@ -100,6 +104,7 @@
                     height: 462px;
                     background: #2463cc;
                     margin-right: 46px;
+
                 }
             }
             .introduction{
@@ -131,7 +136,7 @@
     .companyProfile{
         main{
             .content{
-                .contentRight{
+                .contentRight{  
                     .el-tabs,.el-tabs--left{
                         .el-tabs__header{
                             .el-tabs__nav-wrap{
@@ -144,15 +149,14 @@
                             width: 76px;
                             border-right:12px;
                             .el-tabs__nav{
-                                // border-right:12px
                                 .el-tabs__active-bar{
                                     width:0;
                                     height:0 !important;
                                     right:-12px;
-                                    top:32px;
+                                    top:40px;
                                     z-index:100;
-                                    border-top:12px solid transparent;
-                                    border-bottom:12px solid transparent;
+                                    border-top:6px solid transparent;
+                                    border-bottom:6px solid transparent;
                                     border-left:12px solid #2463cc;
                                     background:#fff;
                                 }
