@@ -1,7 +1,6 @@
 <template>
     <div class="solution">
-        <img alt="解决方案配图" src="../../assets/solution.png"/>
-        <p>助力智慧农业</p>
+        <img alt="解决方案banner图" src="../../assets/solution.png"/>
     </div>
 </template>
 <script>
@@ -11,21 +10,9 @@
 </script>
 <style lang="less" scoped>
     .solution{
-        width: 100%;
-        height: 600px;
-        position: relative;
         img{
             width: 100%;
-            height: 100%;
-        }
-        p{
-            position: absolute;
-            top:220px;
-            left:0;
-            right:0;
-            margin: auto;
-            font-size: 56px;
-            color:#fff;
+            height: 600px;
         }
     }
 </style>

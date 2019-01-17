@@ -19,14 +19,15 @@ export default {
 </script>
 <style lang="less" scoped>
     .footer{
-        position:fixed;
+        // position:fixed;
         bottom: 0;
         width: 100%;
         height: 432px;
         background: url(../../assets/footerBg.png) no-repeat;
         .footNavList{
+            width:73%;
             height: 82px;
-            margin:0 256px;
+            margin:0 auto;
             border-top: 2px solid #979797;
             ul{
                 margin-top:12px;
@@ -35,10 +36,12 @@ export default {
                 display: flex;
                 justify-content: space-between;
                 li{
+                    // width: 100%;
                     border-left:1px solid #C0C0C0;
                     font-size: 14px;
                     color:#979797;
                     padding: 0 84px;
+                    // padding:0 auto;
                 }
                 li:first-child{
                     border-left:0;

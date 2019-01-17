@@ -1,6 +1,13 @@
 <template>
     <div class="companyProfile">
-        这是公司介绍页
+         <img alt="公司介绍banner图" src="../../assets/companyProfile.png"/>
+         <section>
+             <div class="title">
+                 <h1>我们的优势</h1>
+                 <div class='EnTitle'>Our Advantages</div>
+                 <img class="icon" src='../../assets/icon.png'/>
+             </div>
+         </section>
     </div>
 </template>
 
@@ -12,7 +19,25 @@ export default {
 
 <style lang="less" scoped>
     .companyProfile{
-        // padding-top:68px; 
+        width: 100%;
+        height: 600px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        .title{
+            h1{
+                font-size: 14px;
+            }
+            .EnTitle{
+                font-size: 28px;
+                font-weight: bold;
+            }
+            .icon{
+                width: 40px;
+            }
+        }
     }
+    
 </style>
 
