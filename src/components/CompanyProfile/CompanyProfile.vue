@@ -1,6 +1,9 @@
 <template>
     <div class="companyProfile">
-        这是公司介绍页
+         <img alt="公司介绍banner图" src="../../assets/companyProfile.png"/>
+         <section>
+
+         </section>
     </div>
 </template>
 
@@ -12,7 +15,12 @@ export default {
 
 <style lang="less" scoped>
     .companyProfile{
-        // padding-top:68px; 
+        width: 100%;
+        height: 600px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
     }
 </style>
 
