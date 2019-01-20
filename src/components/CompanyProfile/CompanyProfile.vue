@@ -1,5 +1,5 @@
 <template>
-    <div class="companyProfile">
+    <div class="companyProfile" ondragstart="return false">
          <img class="banner" alt="公司介绍banner图" src="../../assets/companyProfile.jpg"/>
          <section>
             <main>
