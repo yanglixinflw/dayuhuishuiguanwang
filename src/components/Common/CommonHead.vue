@@ -9,7 +9,7 @@
       <el-col :span="14">
         <div class="navMenu">
           <el-menu 
-            :default-active="activeIndex" 
+            :default-active="activeIndexChange" 
             mode="horizontal" 
             @select="handleSelect"
           >
@@ -49,6 +49,11 @@ export default {
       },
       handleLogoClick(){
         this.$router.push('/');
+      },
+    },
+    computed:{
+      activeIndexChange:function(){
+        return this.activeIndex=window.location.pathname
       }
     }
   

@@ -36,7 +36,7 @@
                 <span class="proPoint">云南省水利厅批准云南农田水利改革试点项目</span>
             </div>
             <div class="proItem">
-                <img class="yuanmo" src='../../assets/yuanmo.jpg' />
+                <img class="yuanmo" src='../../assets/yuanmo.jpg' alt='yuanmo' />
             </div>
             <div class="proInfo">
                 <div class="proName">云南祥云5万亩高效节水灌溉PPP项目</div>
@@ -50,7 +50,7 @@
                         <div class="part2">高效灌溉面积<span>5</span>万亩</div>
                         <p class="part3">缓解水资源供需矛盾，提升农业 抗旱保守能利</p>
                     </div>
-                    <img src='../../assets/lulianghen.jpg'/>
+                    <img src='../../assets/lulianghen.jpg' alt='xiangyun'/>
                 </div>
             </div>
             <!-- <el-tab-pane>
@@ -184,7 +184,7 @@ export default {
             top:63px;
             left:360px;
             z-index: 10;
-            width:47.6%;
+            width:51%;
             height: 276px;
             background-color:#fff; 
             display: flex;
@@ -229,8 +229,8 @@ export default {
             height: 84px;
             background-color:#4B7ED5; 
             position: absolute;
-            right:246px;
-            top:275px;
+            right:17.3%;
+            top:274px;
         }
         .colorStroke{
             width:311px;
