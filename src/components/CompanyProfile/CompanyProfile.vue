@@ -1,5 +1,5 @@
 <template>
-    <div class="companyProfile">
+    <div class="companyProfile" ondragstart="return false">
          <img class="banner" alt="公司介绍banner图" src="../../assets/companyProfile.jpg"/>
          <section>
             <main>
@@ -10,7 +10,7 @@
                 </div>
                 <div class="content">
                     <div class="contentLeft">
-                        <img src='../../assets/advantages.jpg'/>
+                        <div class="kuang"></div>
                     </div>
                     <div class="contentRight">
                         <el-tabs :tab-position="tabPosition" style="height: 462px;">
@@ -136,7 +136,11 @@
                     height: 462px;
                     background: #2463cc;
                     margin-right: 46px;
-
+                    .kuang{
+                        width: 206px;
+                        height: 355px;
+                        border:4px solid #fff;
+                    }
                 }
             }
             .introduction{
