@@ -1,6 +1,6 @@
 <template>
-  <div class="footer" >
-    <div class="informationBg" v-bind:class="{indexFooter:pathNameChange}">
+  <div class="footer">
+    <div class="informationBg" v-bind:class="pathNameChange">
       <div class="information">
         <div class="qrCode">
           <img src="../../assets/QRcode.png">
@@ -36,76 +36,102 @@
 </template>
 
 <script>
+import eventBus from '../../assets/eventBus/eventBus.js'
 export default {
   name: "CommonFooter",
-  data:function(){
+  data: function() {
     return {
-      isIndex:false
-    }
+      // isIndex:false
+      // isIndex:true
+      pathNameChange:""
+    };
   },
-  computed:{
-    pathNameChange:function(){
-      return this.isIndex=window.location.pathname === '/'?true:false
-      
-    }
-  }
+  mounted(){
+    // console.log(window.location.pathname)
+    // this.pathNameChange=window.location.pathname === "/" ? "indexFooter" : null;
+    // window.onresize=()=>{
+    //   console.log(123)
+    // }
+    let that = this
+    eventBus.$on('passSomeThing',(key)=>{
+      that.pathNameChange=key==='/'?"indexFooter" : null
+    })
+  },
+  // watch: {
+  //   pathNameChange: function() {
+  //     console.log(window.location.pathname);
+  //     return this.pathNameChange=window.location.pathname === "/" ? "indexFooter" : null;
+  //   }
+  // },
+  // computed: {
+  //   pathNameChange: function() {
+  //     console.log(window.location.pathname);
+  //     return window.location.pathname === "/" ? "indexFooter" : null;
+  //     // console
+  //   }
+  // },
+  // beforeDestroy: {
+  //   pathNameChange: function() {
+  //     console.log("销毁");
+  //   }
+  // }
 };
 </script>
 <style lang="less" scoped>
-.indexFooter{
+.indexFooter {
   padding-top: 228px !important;
 }
 .footer {
   width: 100%;
-    .informationBg{
-        width: 100%;
-        padding-top: 116px;
-        background: url(../../assets/footerBg.png) no-repeat;
-        .information {
-            display: flex;
-            width: 48%;
-            margin: 0 auto 26px;
-            .qrCode {
-                p {
-                    text-align: center;
-                }
-            }
-            .noPublic {
-                margin-left: 22px;
-                p {
-                    text-align: center;
-                }
-            }
-            .contact {
-                margin-left: 30px;
-                .telephone {
-                    font-size: 28px;
-                    font-weight: 800;
-                    font-style: italic;
-                    color: #535353;
-                }
-                .mailbox {
-                    margin-top: 5px;
-                    margin-bottom: 10px;
-                    font-size: 14px;
-                    color: #535353;
-                }
-                .caseNumber {
-                    font-size: 14px;
-                    color: #535353;
-                }
-                .company {
-                    font-size: 14px;
-                    color: #535353;
-                }
-                .address {
-                    font-size: 14px;
-                    color: #535353;
-                    margin-top: 5px;
-                }
-            }
+  .informationBg {
+    width: 100%;
+    padding-top: 116px;
+    background: url(../../assets/footerBg.png) no-repeat;
+    .information {
+      display: flex;
+      width: 48%;
+      margin: 0 auto 26px;
+      .qrCode {
+        p {
+          text-align: center;
         }
+      }
+      .noPublic {
+        margin-left: 22px;
+        p {
+          text-align: center;
+        }
+      }
+      .contact {
+        margin-left: 30px;
+        .telephone {
+          font-size: 28px;
+          font-weight: 800;
+          font-style: italic;
+          color: #535353;
+        }
+        .mailbox {
+          margin-top: 5px;
+          margin-bottom: 10px;
+          font-size: 14px;
+          color: #535353;
+        }
+        .caseNumber {
+          font-size: 14px;
+          color: #535353;
+        }
+        .company {
+          font-size: 14px;
+          color: #535353;
+        }
+        .address {
+          font-size: 14px;
+          color: #535353;
+          margin-top: 5px;
+        }
+      }
     }
+  }
   .footNavList {
     width: 73%;
     height: 82px;
@@ -123,9 +149,9 @@ export default {
         font-size: 14px;
         color: #979797;
         text-align: center;
-        &:hover{
-            color: #2463CC;
-            cursor: pointer;
+        &:hover {
+          color: #2463cc;
+          cursor: pointer;
         }
       }
       li:first-child {

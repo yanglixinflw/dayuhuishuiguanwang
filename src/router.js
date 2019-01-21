@@ -4,7 +4,7 @@ import IndexPage from './views/IndexPage.vue'
 import Solution from "./views/Solution.vue"
 import CompanyProfile from './views/CompanyProfile.vue'
 Vue.use(Router)
-export default new Router({
+let router =new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -33,3 +33,6 @@ export default new Router({
     }
   ]
 })
+export  {
+  router
+}

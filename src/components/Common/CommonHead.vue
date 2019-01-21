@@ -11,6 +11,7 @@
           <el-menu 
             :default-active="activeIndex" 
             mode="horizontal" 
+            @select="handleSelect"
           >
             <el-menu-item index="/">
               <router-link to="/">首页</router-link>
@@ -33,6 +34,7 @@
 </template>
 
 <script>
+import eventBus from '../../assets/eventBus/eventBus.js'
 export default {
   name: "CommonHead",
     data() {
@@ -42,8 +44,7 @@ export default {
     },
     methods: {
       handleSelect(key, keyPath) {
-        // console.log(key,keyPath);
-        this.activeIndex=key
+        eventBus.$emit('passSomeThing',key)
       },
       handleLogoClick(){
         this.$router.push('/');
