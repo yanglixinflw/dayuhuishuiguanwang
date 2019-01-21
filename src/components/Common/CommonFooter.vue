@@ -42,7 +42,6 @@ export default {
 </script>
 <style lang="less" scoped>
 .footer {
-  bottom: 0;
   width: 100%;
     .informationBg{
         width: 100%;
