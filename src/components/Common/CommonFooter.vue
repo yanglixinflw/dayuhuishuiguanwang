@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div class="footer" :class="{indexFooter:isIndex}">
     <div class="informationBg">
       <div class="information">
         <div class="qrCode">
@@ -37,10 +37,22 @@
 
 <script>
 export default {
-  name: "CommonFooter"
+  name: "CommonFooter",
+  data:function(){
+    return {
+      isIndex:window.location.pathname=="/"?true:false
+    }
+  },
+  watch:function(){
+    
+  }
 };
 </script>
 <style lang="less" scoped>
+.indexFooter{
+  position: relative;
+  top:-50px;
+}
 .footer {
   width: 100%;
     .informationBg{
