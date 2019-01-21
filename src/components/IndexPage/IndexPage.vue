@@ -1,5 +1,5 @@
 <template>
-  <div class="indexPage">
+  <div class="indexPage" ondragstart="return false;">
     <!-- 初始化height根据屏幕宽度设置 -->
     <el-carousel trigger="click" :height="carouselHeight" :interval="3000">
       <el-carousel-item v-for="item in imgUrl" :key="item">
@@ -7,7 +7,7 @@
       </el-carousel-item>
     </el-carousel>
     <!-- 第一部分宣传内容 -->
-    <main class='main1'>
+    <main class="main1">
       <section>
         <h4>关于我们
           <br>
@@ -24,14 +24,12 @@
           为水利行业信息化的建设和发展提供先进的技术与优质的服务。
         </p>
         <router-link to="/companyProfile">
-        <div class="more">
-          More 
-          <span>
-            ->
-          </span>
-        </div>
+          <div class="more">
+            More
+            <span>-></span>
+          </div>
         </router-link>
-        <div class='picture'>
+        <div class="picture">
           <img src="../../assets/water1.png" class="pic1">
           <img src="../../assets/water2.png" class="pic2">
           <img src="../../assets/water3.png" class="pic3">
@@ -39,13 +37,13 @@
       </section>
     </main>
     <!-- 过渡椭圆 -->
-    <!-- <div 
-    class='transition' 
-    :style="{'width': transitionWidth}">
-    </div> -->
-    <main class='main2'>
-
-    </main>
+    <div class="transition">
+      <img src="../../assets/transition.jpg">
+    </div>
+    <main class="main2"></main>
+    <div class="transition">
+      <img src="../../assets/transition.jpg" class="bottomTran">
+    </div>
   </div>
 </template>
 <style lang="less">
@@ -101,69 +99,69 @@
       p {
         width: 600px;
         font-size: 12px;
-        color:#636363;
+        color: #636363;
       }
-      a{
+      a {
         text-decoration: none;
       }
-      .more{
+      .more {
         display: inline-block;
         width: 123px;
         height: 33px;
-        border: 1px #4D4D4D solid;
+        border: 1px #4d4d4d solid;
         text-align: center;
         line-height: 33px;
-        margin-top:45px;
+        margin-top: 45px;
         border-radius: 4px;
-        color: #4D4D4D;
-        &:hover{
-          color:#1182F0;
-          border-color: #1182F0;
-          span{
+        color: #4d4d4d;
+        &:hover {
+          color: #1182f0;
+          border-color: #1182f0;
+          span {
             display: none;
           }
         }
-        span{
+        span {
           margin-left: 20px;
         }
       }
-      .picture{
+      .picture {
         // float: right;
         position: absolute;
         right: 0;
-        top:44px;
+        top: 44px;
         // border: 1px red solid;
-        .pic1{
+        .pic1 {
           height: 312px;
           width: 256px;
         }
-        .pic2{
+        .pic2 {
           position: relative;
-          top:-115px;
+          top: -115px;
           width: 212px;
           height: 260px;
         }
-        .pic3{
+        .pic3 {
           position: absolute;
           z-index: 10;
           left: 130px;
-          top:-219px;
+          top: -219px;
           width: 184px;
           height: 226px;
         }
       }
     }
   }
-  // .transition{
-  //   height: 108px;
-  //   background: white;
-  //   border-radius: 50% ;
-  //   position: relative;
-  //   z-index: 10
-  // }
-  .main2{
-    height: 730px;
-    background: #2463CC;
+  .transition {
+    height: 112px;
+    // background: white;
+    .bottomTran {
+      transform: rotate(180deg);
+    }
+  }
+  .main2 {
+    height: 508px;
+    background: #2463cc;
     // position: relative;
     // top:-54px;
   }
@@ -182,7 +180,7 @@ export default {
         require("../../assets/carousel3.jpg")
       ],
       // 轮播图高度
-      carouselHeight: ((window.screenWidth * 880) / 1900).toFixed(1) + "px",
+      carouselHeight: ((window.screenWidth * 880) / 1900).toFixed(1) + "px"
       // 过渡椭圆宽度
       // transitionWidth: ''
     };
@@ -196,7 +194,7 @@ export default {
     window.onresize = () => {
       return (() => {
         let clientWidth = document.body.clientWidth;
-        
+
         // console.log(clientWidth)
         if (clientWidth >= 1200) {
           that.carouselHeight = ((clientWidth * 880) / 1900).toFixed(1) + "px";
@@ -207,6 +205,6 @@ export default {
         }
       })();
     };
-  },
+  }
 };
 </script>

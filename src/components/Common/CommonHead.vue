@@ -3,33 +3,28 @@
     <el-row type="flex">
       <el-col :span="10">
         <div class="logoName">
-          <img src='../../assets/logo.png' />
+          <img src='../../assets/logo.png' @click="handleLogoClick"/>
         </div>
       </el-col>
       <el-col :span="14">
         <div class="navMenu">
           <el-menu 
             :default-active="activeIndex" 
-            class="el-menu-demo" 
             mode="horizontal" 
             @select="handleSelect"
-            router
           >
             <el-menu-item index="/">
-              <!-- <router-link to="">Home</router-link> -->
-              首页
+              <router-link to="/">首页</router-link>
             </el-menu-item>
             <el-menu-item index="/solution">
-              <!-- <router-link to="">About</router-link> -->
-              解决方案
+              <router-link to="/solution">解决方案</router-link>
             </el-menu-item>
             <el-menu-item index="/companyProfile">
-              <!-- <router-link to="">公司介绍</router-link> -->
-              公司介绍
+              <router-link to="/companyProfile">公司介绍</router-link>
             </el-menu-item>
             <el-menu-item index="/demoDevice">
               <!-- <router-link to="">演示系统</router-link> -->
-              演示系统
+              <a href="http://nysj.huishuiyun.com/#/login" target="_blank">演示系统</a>
             </el-menu-item>
             </el-menu>
         </div>
@@ -39,6 +34,7 @@
 </template>
 
 <script>
+import eventBus from '../../assets/eventBus/eventBus.js'
 export default {
   name: "CommonHead",
     data() {
@@ -47,9 +43,12 @@ export default {
         };
     },
     methods: {
+      // eventBus传递path
       handleSelect(key, keyPath) {
-        // console.log(key,keyPath);
-        this.activeIndex=key
+        eventBus.$emit('passSomeThing',key)
+      },
+      handleLogoClick(){
+        this.$router.push('/');
       }
     }
   
@@ -70,6 +69,7 @@ export default {
           img{
             position: relative;
             top: 20px;
+            cursor: pointer;
           }
         }
         .navMenu{
@@ -84,6 +84,11 @@ export default {
               margin: 0 58px ;
               color: #888888;
               font-size: 12px;
+              a{
+                display: block;
+                text-decoration: none;
+                height: 68px;
+              }
             }
             .is-active{
               color:#2463CC;
@@ -92,7 +97,7 @@ export default {
           }
         }
     }
-    @media(max-width: 1139px){
+    @media(max-width: 1159px){
       .head{
         .navMenu{
           .el-menu-item{
