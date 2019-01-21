@@ -5,61 +5,66 @@
             <main>
                 <div class="title">
                     <h1>我们的优势</h1>
-                    <div class='EnTitle'>Our Advantages</div>
+                    <div class='EnTitle'>OUR ADVATAGES</div>
                     <img class="icon" src='../../assets/icon.png'/>
+                    <!-- <div class="icon"></div> -->
                 </div>
                 <div class="content">
                     <div class="contentLeft">
                         <div class="kuang"></div>
+                        <div class="picDescription">
+                            <div class='picTitle'>我们的优势</div>
+                            <div class="picEnTitle">Our Advantages</div>
+                        </div>
                     </div>
                     <div class="contentRight">
-                        <el-tabs :tab-position="tabPosition" style="height: 462px;">
-                            <el-tab-pane label="01">
-                                <div>
-                                    <div class="img">
-                                        <img src='../../assets/advantages2.jpg'/>
+                        <ul class="sign">
+                            <li v-for="(dot, i) in sliders" :key="i"
+                                :class="{dotted: i === (currentIndex-1)}"
+                                @click = jump(i+1)
+                            >
+                                {{dot.num}}
+                                <span
+                                    :class="{active: i === (currentIndex-1)}"
+                                >
+                                </span>
+                            </li>
+                        </ul>
+                        <ul class="container" :style="containerStyle">
+                            <li> 
+                                <div class="img">
+                                    <img :src="sliders[sliders.length - 1].img" alt=""/>
+                                     <div class="instructions">
+                                        <div class='word'>{{sliders[sliders.length - 1].word}}</div>
+                                        <div class="triangle"></div>
                                     </div>
-                                    <div class="line"></div>
-                                    <div class="description">通过与中国水利水电科学研究院、清华大学、日本筑波大学等进行战略合作和自主研发，形成了一套自己特有的覆盖“三农三水”全领域、全产业链、全生命周期的自动化信息集成处理系统，并已成功运用到各类项目中；</div>
                                 </div>
-                            </el-tab-pane>
-                            <el-tab-pane label="02">
-                                <div>
-                                    <div class="img">
-                                        <img src='../../assets/advantages2.jpg'/>
+                                <div class="line"></div>
+                                <div class="description">{{sliders[sliders.length - 1].data}}</div>
+                            </li>
+                            <li v-for="(item, index) in sliders" :key="index">
+                                <div class="img">
+                                    <img :src="item.img" alt=""/>
+                                    <div class="instructions">
+                                        <div class='word'>{{item.word}}</div>
+                                        <div class="triangle"></div>
                                     </div>
-                                    <div class="line"></div>
-                                    <div class="description">通过与中国水利水电科学研究院、清华大学、日本筑波大学等进行战略合作和自主研发，形成了一套自己特有的覆盖“三农三水”全领域、全产业链、全生命周期的自动化信息集成处理系统，并已成功运用到各类项目中；</div>
                                 </div>
-                            </el-tab-pane>
-                            <el-tab-pane label="03">
-                                <div>
-                                    <div class="img">
-                                        <img src='../../assets/advantages2.jpg'/>
+                                <div class="line"></div>
+                                <div class="description">{{item.data}}</div>
+                            </li>
+                            <li>
+                                <div class="img">
+                                    <img :src="sliders[0].img" alt=""/>
+                                    <div class="instructions">
+                                        <div class='word'>{{sliders[0].word}}</div>
+                                        <div class="triangle"></div>
                                     </div>
-                                    <div class="line"></div>
-                                    <div class="description">通过与中国水利水电科学研究院、清华大学、日本筑波大学等进行战略合作和自主研发，形成了一套自己特有的覆盖“三农三水”全领域、全产业链、全生命周期的自动化信息集成处理系统，并已成功运用到各类项目中；</div>
                                 </div>
-                            </el-tab-pane>
-                            <el-tab-pane label="04">
-                                <div>
-                                    <div class="img">
-                                        <img src='../../assets/advantages2.jpg'/>
-                                    </div>
-                                    <div class="line"></div>
-                                    <div class="description">通过与中国水利水电科学研究院、清华大学、日本筑波大学等进行战略合作和自主研发，形成了一套自己特有的覆盖“三农三水”全领域、全产业链、全生命周期的自动化信息集成处理系统，并已成功运用到各类项目中；</div>
-                                </div>
-                            </el-tab-pane>
-                            <el-tab-pane label="05">
-                                <div>
-                                    <div class="img">
-                                        <img src='../../assets/advantages2.jpg'/>
-                                    </div>
-                                    <div class="line"></div>
-                                    <div class="description">通过与中国水利水电科学研究院、清华大学、日本筑波大学等进行战略合作和自主研发，形成了一套自己特有的覆盖“三农三水”全领域、全产业链、全生命周期的自动化信息集成处理系统，并已成功运用到各类项目中；</div>
-                                </div>
-                            </el-tab-pane>
-                        </el-tabs>
+                                <div class="line"></div>
+                                <div class="description">{{sliders[0].data}}</div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </main>
@@ -86,26 +91,137 @@
 </template>
 
 <script>
-    export default {
-        name:"CompanyProfile",
-        data() {
-            return {
-                tabPosition: 'left'
-            };
-        }
+export default {
+ name: 'companyProfile',
+ props: {
+  initialSpeed: {
+   type: Number,
+   default: 30
+  },
+  initialInterval: {
+   type: Number,
+   default: 4
+  }
+ },
+ data () {
+  return {
+   sliders:[
+    {
+        num:"01",
+        img:require("../../assets/advantages.jpg"),
+        data:"通过与中国水利水电科学研究院、清华大学、日本筑波大学等进行战略合作和自主研发，形成了一套自己特有的覆盖“三农三水”全领域、全产业链、全生命周期的自动化信息集成处理系统，并已成功运用到各类项目中；",
+        word:"技术研发优势"
+    },
+    {
+        num:"02",
+        img:require("../../assets/carousel2.jpg"),
+        data:"通过与中国水利水电科学研究院、清华大学、日本筑波大学等进行战略合作和自主研发，形成了一套自己特有的覆盖“三农三水”全领域、全产业链、全生命周期的自动化信息集成处理系统，并已成功运用到各类项目中；",
+        word:"技术研发优势"
+    },
+    {
+        num:"03",
+        img:require("../../assets/carousel3.jpg"),
+        data:"通过与中国水利水电科学研究院、清华大学、日本筑波大学等进行战略合作和自主研发，形成了一套自己特有的覆盖“三农三水”全领域、全产业链、全生命周期的自动化信息集成处理系统，并已成功运用到各类项目中；",
+        word:"技术研发优势"
+    },
+    {
+        num:"04",
+        img:require("../../assets/carousel1.jpg"),
+        data:"通过与中国水利水电科学研究院、清华大学、日本筑波大学等进行战略合作和自主研发，形成了一套自己特有的覆盖“三农三水”全领域、全产业链、全生命周期的自动化信息集成处理系统，并已成功运用到各类项目中；",
+        word:"技术研发优势"
+    },
+    {
+        num:"05",
+        img:require("../../assets/carousel3.jpg"),
+        data:"通过与中国水利水电科学研究院、清华大学、日本筑波大学等进行战略合作和自主研发，形成了一套自己特有的覆盖“三农三水”全领域、全产业链、全生命周期的自动化信息集成处理系统，并已成功运用到各类项目中；",
+        word:"技术研发优势"
+    },
+   ],
+   currentIndex:1,
+   distance:-460,
+   transitionEnd: true,
+   speed: this.initialSpeed
+  }
+ },
+ computed:{
+  containerStyle() {
+   return {
+    transform:`translate3d(0, ${this.distance}px, 0)`
+   }
+  },
+  interval() {
+   return this.initialInterval * 1000
+  }
+ },
+ mounted() {
+  this.init()
+ },
+ methods:{
+  init() {
+   this.play()
+   window.onblur = function() { this.stop() }.bind(this)
+   window.onfocus = function() { this.play() }.bind(this)
+  },
+  move(offset, direction, speed) {
+   if (!this.transitionEnd) return
+   this.transitionEnd = false
+   direction === -1 ? this.currentIndex += offset/460 : this.currentIndex -= offset/460
+   if (this.currentIndex > 5) this.currentIndex = 1
+   if (this.currentIndex < 1) this.currentIndex = 5
+   const destination = this.distance + offset * direction
+   this.animate(destination, direction, speed)
+  },
+  animate(des, direc, speed) {
+   if (this.temp) { 
+    window.clearInterval(this.temp)
+    this.temp = null 
+   }
+   this.temp = window.setInterval(() => {
+    if ((direc === -1 && des < this.distance) || (direc === 1 && des > this.distance)) {
+     this.distance += speed * direc
+    } else {
+     this.transitionEnd = true
+     window.clearInterval(this.temp)
+     this.distance = des
+     if (des < -2300) this.distance = -460
+     if (des > -460) this.distance = -2300
     }
+   }, 20)
+  },
+  jump(index) {
+   const direction = index - this.currentIndex >= 0 ? -1 : 1
+   const offset = Math.abs(index - this.currentIndex) * 460
+   const jumpSpeed = Math.abs(index - this.currentIndex) === 0 ? this.speed : Math.abs(index - this.currentIndex) * this.speed 
+   this.move(offset, direction, jumpSpeed)
+  },
+  play() {
+   if (this.timer) {
+    window.clearInterval(this.timer)
+    this.timer = null
+   }
+   this.timer = window.setInterval(() => {
+    this.move(460, -1, this.speed)
+   }, this.interval)
+  },
+  stop() {
+   window.clearInterval(this.timer)
+   this.timer = null
+  }
+ }
+}
 </script>
 
 <style lang="less" scoped>
     .companyProfile{
         width: 100%;
+        min-width: 1200px;
         .banner{
             width: 100%;
-            height: 600px;
         }
         main{
             width: 1200px;
             margin:auto;
+            position: relative;
             .title{
                 width: 100%; 
                 margin-top:31px;
@@ -126,6 +242,18 @@
                     display: block;
                     margin: auto;
                 }
+                // .icon::before {
+                //     content: '';
+                //     position: absolute;
+                //     top: 56px;
+                //     width: 48px;
+                //     height: 0.5em;
+                //     background:
+                //         linear-gradient(135deg, transparent, transparent 45%, #2463cc, transparent 55%, transparent 100%),
+                //         linear-gradient(45deg, transparent, transparent 45%, #2463cc, transparent 55%, transparent 100%);
+                //     background-size: 1em 1em;
+                //     background-repeat: repeat-x, repeat-x;
+                // }
             }
             .content{
                 width: 100%;
@@ -136,11 +264,139 @@
                     height: 462px;
                     background: #2463cc;
                     margin-right: 46px;
+                    position: relative;
                     .kuang{
                         width: 206px;
                         height: 355px;
-                        border:4px solid #fff;
+                        border:6px solid #fff;
+                        position: absolute;
+                        right: 55px;
+                        left: 137px;
+                        top:0;
+                        bottom:0;
+                        margin:auto;
                     }
+                    .picDescription{
+                        position: absolute;
+                        width: 290px;
+                        height: 90px;
+                        background: #2463cc;
+                        top:83px;
+                        .picTitle{
+                            font-size: 36px;
+                            color:#fff;
+                            text-align: center;
+                        }
+                        .picEnTitle{
+                            font-size: 18px;
+                            color:#fff;
+                            text-align: center;
+                        }
+                    }
+                }
+                .contentRight{
+                    display: flex;
+                    overflow: hidden;
+                   .sign{
+                        width: 75px;
+                        height: 461px;
+                        list-style: none;
+                        margin-right: 42px;
+                        li{
+                            position: relative;
+                            width: 100%;
+                            height: 92px;
+                            font-size: 50px;
+                            color:#fff;
+                            font-weight: bold;
+                            text-align: center;
+                            line-height: 92px;
+                        }
+                        .dotted{
+                            background: #2463cc !important;
+                        }
+                        .active{
+                            position:absolute;
+                            right: -12px;
+                            top:0;
+                            bottom:0;
+                            margin: auto;
+                            width: 0;
+                            height: 0;
+                            display: block;
+                            border-top: 6px solid transparent;
+                            border-bottom: 6px solid transparent;
+                            border-left: 12px solid #2463cc;
+                        }
+                        li:nth-child(1){
+                            background:#e4e6e9;
+                        }
+                        li:nth-child(2){
+                            background:#d5dae2;
+                        }
+                        li:nth-child(3){
+                            background:#bbc0c8;
+                        }
+                        li:nth-child(4){
+                            background:#acb1b9;
+                        }
+                        li:nth-child(5){
+                            background:#9da1a7;
+                        }
+                   }
+                   .container{
+                       width: 626px;
+                       list-style: none;
+                       height: 461px;
+                       li{
+                           width: 100%;
+                           height: 461px;
+                           .line{
+                                width: 49px;
+                                height: 3px;
+                                margin: 56px 0 25px 2px;
+                                background:#2463cc;
+                            }
+                            .img{
+                                width: 100%;
+                                height: 310px;
+                                background:#b0dcf4;
+                                display:flex;
+                                img{
+                                    width: 500px;
+                                    height: 310px;
+                                }
+                                .instructions{
+                                    width: 126px;
+                                    height: 310px;
+                                    background:#2463cc;
+                                    position: relative;
+                                    .word{
+                                        width: 28px;
+                                        font-size:24px;
+                                        color:#fff;
+                                        margin:60px auto 0;
+                                    }
+                                    .triangle{
+                                        position:absolute;
+                                        width: 0;
+                                        height: 0;
+                                        border-top:9px solid transparent;
+                                        border-bottom:9px solid transparent;
+                                        border-right:18px solid #2463cc;
+                                        left:-18px;
+                                        top:0;
+                                        bottom:0;
+                                        margin:auto;
+                                    }
+                                }
+                            }
+                           .description{
+                                font-size:12px;
+                                color:#636363;
+                            }
+                       }
+                   }
                 }
             }
             .introduction{
@@ -168,87 +424,3 @@
         }
     }
 </style>
-<style lang='less'>
-    .companyProfile{
-        main{
-            .content{
-                .contentRight{  
-                    .el-tabs,.el-tabs--left{
-                        .el-tabs__header{
-                            .el-tabs__nav-wrap{
-                                overflow: visible!important;
-                                .el-tabs__nav-scroll{
-                                     overflow: visible!important;
-                                }
-                            }
-                            margin-right:42px;
-                            width: 76px;
-                            border-right:12px;
-                            .el-tabs__nav{
-                                .el-tabs__active-bar{
-                                    width:0;
-                                    height:0 !important;
-                                    right:-12px;
-                                    top:40px;
-                                    z-index:100;
-                                    border-top:6px solid transparent;
-                                    border-bottom:6px solid transparent;
-                                    border-left:12px solid #2463cc;
-                                    background:#fff;
-                                }
-                                .is-active{
-                                    background:#2463cc!important;
-                                }
-                                .el-tabs__item{
-                                    padding:0;
-                                    height: 92px;
-                                    font-size:50px;
-                                    color:#fff;
-                                    font-weight:bold;
-                                    line-height:92px;
-                                    text-align:center;
-                                }
-                                #tab-0{
-                                    background:#f7f4f5;
-                                }
-                                #tab-1{
-                                    background:#efedee;
-                                }
-                                #tab-2{
-                                    background:#e3e3e3;
-                                }
-                                #tab-3{
-                                    background:#dedbdb;
-                                }
-                                #tab-4{
-                                    background:#d7d5d6;
-                                }
-                            }
-                        }
-                        .el-tabs__content{
-                            width: 626px;
-                            .el-tab-pane{
-                                .img{
-                                    width: 100%;
-                                    height: 310px;
-                                    background:#b0dcf4
-                                }
-                                .line{
-                                    width: 49px;
-                                    height: 3px;
-                                    margin: 56px 0 25px 2px;
-                                    background:#2463cc;
-                                }
-                                .description{
-                                    font-size:12px;
-                                    color:#636363;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-</style>
-
