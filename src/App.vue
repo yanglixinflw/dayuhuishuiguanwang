@@ -9,9 +9,10 @@
 </template>
 
 <style lang="less">
-// #content{
-//   margin-top: 68px;
-// }
+// 暂定限制
+#app{
+  min-width: 1200px;
+}
 *{
   margin:0;padding:0
 }
