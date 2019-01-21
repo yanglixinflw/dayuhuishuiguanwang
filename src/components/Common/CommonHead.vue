@@ -13,23 +13,19 @@
             class="el-menu-demo" 
             mode="horizontal" 
             @select="handleSelect"
-            router
           >
             <el-menu-item index="/">
-              <!-- <router-link to="">Home</router-link> -->
-              首页
+              <router-link to="/">首页</router-link>
             </el-menu-item>
             <el-menu-item index="/solution">
-              <!-- <router-link to="">About</router-link> -->
-              解决方案
+              <router-link to="/solution">解决方案</router-link>
             </el-menu-item>
             <el-menu-item index="/companyProfile">
-              <!-- <router-link to="">公司介绍</router-link> -->
-              公司介绍
+              <router-link to="/companyProfile">公司介绍</router-link>
             </el-menu-item>
             <el-menu-item index="/demoDevice">
               <!-- <router-link to="">演示系统</router-link> -->
-              演示系统
+              <a href="http://nysj.huishuiyun.com/#/login" target="_blank">演示系统</a>
             </el-menu-item>
             </el-menu>
         </div>
@@ -84,6 +80,9 @@ export default {
               margin: 0 58px ;
               color: #888888;
               font-size: 12px;
+              a{
+                text-decoration: none;
+              }
             }
             .is-active{
               color:#2463CC;
@@ -92,7 +91,7 @@ export default {
           }
         }
     }
-    @media(max-width: 1139px){
+    @media(max-width: 1159px){
       .head{
         .navMenu{
           .el-menu-item{
