@@ -43,6 +43,7 @@ export default {
         };
     },
     methods: {
+      // eventBus传递path
       handleSelect(key, keyPath) {
         eventBus.$emit('passSomeThing',key)
       },
