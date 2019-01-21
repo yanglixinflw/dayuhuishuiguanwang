@@ -10,7 +10,6 @@
         <div class="navMenu">
           <el-menu 
             :default-active="activeIndex" 
-            class="el-menu-demo" 
             mode="horizontal" 
             @select="handleSelect"
           >
@@ -81,7 +80,9 @@ export default {
               color: #888888;
               font-size: 12px;
               a{
+                display: block;
                 text-decoration: none;
+                height: 68px;
               }
             }
             .is-active{
