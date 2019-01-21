@@ -3,7 +3,7 @@
     <el-row type="flex">
       <el-col :span="10">
         <div class="logoName">
-          <img src='../../assets/logo.png' />
+          <img src='../../assets/logo.png' @click="handleLogoClick"/>
         </div>
       </el-col>
       <el-col :span="14">
@@ -11,7 +11,6 @@
           <el-menu 
             :default-active="activeIndex" 
             mode="horizontal" 
-            @select="handleSelect"
           >
             <el-menu-item index="/">
               <router-link to="/">首页</router-link>
@@ -45,6 +44,9 @@ export default {
       handleSelect(key, keyPath) {
         // console.log(key,keyPath);
         this.activeIndex=key
+      },
+      handleLogoClick(){
+        this.$router.push('/');
       }
     }
   
@@ -65,6 +67,7 @@ export default {
           img{
             position: relative;
             top: 20px;
+            cursor: pointer;
           }
         }
         .navMenu{

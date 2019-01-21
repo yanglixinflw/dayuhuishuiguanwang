@@ -43,7 +43,7 @@
                 <span class="proPoint">精准扶贫 滋润5万亩良田</span>
             </div>
             <div class="proItem">
-                <div class="stroke"></div>
+                <div class="colorStroke"></div>
                 <div class="itemXiangYun">
                     <div class="xiangyunInfo">
                         <div class="part1">总投资<span>1.48</span>亿元</div>
@@ -155,6 +155,7 @@ export default {
         margin-top:25px;
         height: 136px;
         box-shadow: 0px 0px 48px -21px #1182ED;
+        box-sizing: border-box;
         .proName{
             margin-top:44px;
             margin-left: 44px;
@@ -171,7 +172,7 @@ export default {
     }
     .proItem{
         position: relative;
-        width:92.5%;
+        width:93.45%;
         margin:45px auto 67px;
         .yuanmo{
             width:100%;
@@ -231,7 +232,7 @@ export default {
             right:246px;
             top:275px;
         }
-        .stroke{
+        .colorStroke{
             width:311px;
             height: 222px;
             border:22px solid #2463CC;
@@ -247,7 +248,7 @@ export default {
                 width: 335px;
                 height: 400px;
                 background-color: #fff;
-                margin-left: 147px;
+                margin-left: 12.25%;
                 box-shadow: 0px 0px 48px -21px #1182ED;
                 overflow: hidden;
                 text-overflow:ellipsis;
@@ -286,6 +287,9 @@ export default {
                     font-weight: 400;
                 }
             }
+            img{
+                width: 50.83%;
+            }
         }
         
     }
@@ -295,14 +299,10 @@ export default {
 <style lang="less">
 .program {
     .el-tabs {
-        width: 63%;
-        margin: 0 auto;
-        position: relative;
-        top: -135px;
         .el-tabs__header {
             background-color: #2463cc;
             height: 162px;
-            width:93.6%;
+            width:93.7%;
             margin:0 auto 35px ;
             box-shadow: 0px 0px 48px -14px #1182ED;
             .el-tabs__nav-wrap {
