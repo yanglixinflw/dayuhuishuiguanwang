@@ -1,6 +1,6 @@
 <template>
-  <div class="footer" :class="{indexFooter:isIndex}">
-    <div class="informationBg">
+  <div class="footer" >
+    <div class="informationBg" v-bind:class="{indexFooter:pathNameChange}">
       <div class="information">
         <div class="qrCode">
           <img src="../../assets/QRcode.png">
@@ -40,18 +40,20 @@ export default {
   name: "CommonFooter",
   data:function(){
     return {
-      isIndex:window.location.pathname=="/"?true:false
+      isIndex:false
     }
   },
-  watch:function(){
-    
+  computed:{
+    pathNameChange:function(){
+      return this.isIndex=window.location.pathname === '/'?true:false
+      
+    }
   }
 };
 </script>
 <style lang="less" scoped>
 .indexFooter{
-  position: relative;
-  top:-50px;
+  padding-top: 228px !important;
 }
 .footer {
   width: 100%;
