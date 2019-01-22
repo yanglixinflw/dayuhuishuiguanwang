@@ -45,18 +45,22 @@ export default {
     methods: {
       // eventBus传递path
       handleSelect(key, keyPath) {
-        eventBus.$emit('passSomeThing',key)
+        eventBus.$emit('passSomeThing',key);
+        this.activeIndex=key;
       },
       handleLogoClick(){
+        this.activeIndex="/";
+        eventBus.$emit('passSomeThing','/');
         this.$router.push('/');
       },
     },
     computed:{
       activeIndexChange:function(){
-        return this.activeIndex=window.location.pathname
+        this.activeIndex=window.location.pathname;
+        console.log(this.activeIndex)
+        return this.activeIndex
       }
-    }
-  
+    },
 };
 </script>
 

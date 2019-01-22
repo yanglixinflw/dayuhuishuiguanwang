@@ -54,7 +54,7 @@ export default {
     // }
     let that = this
     eventBus.$on('passSomeThing',(key)=>{
-      that.pathNameChange=key==='/'?"indexFooter" : null
+      that.pathNameChange=key !=='/'?"notIndexFooter" : null
     })
   },
   // watch: {
@@ -78,14 +78,14 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-.indexFooter {
-  padding-top: 228px !important;
+.notIndexFooter {
+  padding-top: 116px !important;
 }
 .footer {
   width: 100%;
   .informationBg {
     width: 100%;
-    padding-top: 116px;
+    padding-top: 228px;
     background: url(../../assets/footerBg.png) no-repeat 100%;
     .information {
       display: flex;
