@@ -36,14 +36,31 @@
         </div>
       </section>
     </main>
-    <!-- 过渡椭圆 -->
-    <div class="transition">
-      <img src="../../assets/transition.jpg">
-    </div>
-    <main class="main2"></main>
-    <div class="transition">
-      <img src="../../assets/transition.jpg" class="bottomTran">
-    </div>
+    <main class="main2">
+      <!-- 过渡椭圆 -->
+      <div class="transition">
+        <img src="../../assets/transition.png">
+      </div>
+      <div class="caseBody">
+        <section>
+          <h4>案例展示
+            <br>
+            <span>CASE PRESENTATION</span>
+            <br>
+            <img class="wave" src="../../assets/wave.png" alt>
+          </h4>
+          <article class='caseArt'>
+            <h1>
+              01<br/>
+            </h1>
+            
+          </article>
+        </section>
+      </div>
+      <div class="transition">
+        <img src="../../assets/transition.png" class="bottomTran">
+      </div>
+    </main>
   </div>
 </template>
 <style lang="less">
@@ -76,7 +93,7 @@
   }
   .main1 {
     width: 1200px;
-    margin: 65px auto 85px;
+    margin: 65px auto 0;
     // border: 1px red solid;
     section {
       position: relative;
@@ -160,10 +177,37 @@
     }
   }
   .main2 {
+    position: relative;
+    top: 108px;
+  }
+  .caseBody {
     height: 508px;
     background: #2463cc;
-    // position: relative;
-    // top:-54px;
+    section {
+      width: 1200px;
+      margin: 0 auto;
+    }
+    h4 {
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      padding-top: 32px;
+      span {
+        font-size: 28px;
+        font-weight: 800;
+      }
+      .wave{
+        width: 40px;
+      }
+    }
+    .caseArt{
+      display: inline-block;
+      width:286px ;
+      height: 450px;
+      border:1px #98B6E7 solid;
+    }
+
   }
 }
 </style>
@@ -180,13 +224,13 @@ export default {
         require("../../assets/carousel3.jpg")
       ],
       // 轮播图高度
-      carouselHeight: ((window.screenWidth * 880) / 1900).toFixed(1) + "px"
+      carouselHeight: ""
       // 过渡椭圆宽度
       // transitionWidth: ''
     };
   },
   mounted() {
-    // 初始化轮播高度+过渡椭圆宽度
+    // 初始化轮播高度
     let clientWidth = document.documentElement.clientWidth;
     this.carouselHeight = ((clientWidth * 880) / 1900).toFixed(1) + "px";
     // this.transitionWidth = clientWidth+"px";
@@ -194,7 +238,6 @@ export default {
     window.onresize = () => {
       return (() => {
         let clientWidth = document.body.clientWidth;
-
         // console.log(clientWidth)
         if (clientWidth >= 1200) {
           that.carouselHeight = ((clientWidth * 880) / 1900).toFixed(1) + "px";
