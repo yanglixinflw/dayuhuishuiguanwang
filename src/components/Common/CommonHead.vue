@@ -97,11 +97,18 @@ export default {
                 display: block;
                 text-decoration: none;
                 height: 68px;
+                font-size: 14px;
+                &:active{
+                  font-weight: bold;
+                }
               }
             }
             .is-active{
               color:#2463CC;
               border-bottom: 2px solid #2463CC;
+              a{
+                font-weight: bold;
+              }
             }
           }
         }
