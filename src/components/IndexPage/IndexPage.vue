@@ -36,14 +36,108 @@
         </div>
       </section>
     </main>
-    <!-- 过渡椭圆 -->
-    <div class="transition">
-      <img src="../../assets/transition.jpg">
-    </div>
-    <main class="main2"></main>
-    <div class="transition">
-      <img src="../../assets/transition.jpg" class="bottomTran">
-    </div>
+    <main class="main2">
+      <!-- 过渡椭圆 -->
+      <div class="transition">
+        <img src="../../assets/transition.png">
+      </div>
+      <div class="caseBody">
+        <section>
+          <h4>案例展示
+            <br>
+            <span>CASE PRESENTATION</span>
+            <br>
+            <img class="wave" src="../../assets/wave.png" alt>
+          </h4>
+          <div class="artBody">
+            <article class="caseArt case01">
+              <h1>
+                <span class="num">01</span>
+                <div class="partition">One</div>
+              </h1>
+              <h6>农村高效节水工程</h6>
+              <p class="words">
+                系统利用信息采集、网络传输、
+                数据存储与分析、自动控制等先进技术，
+                通过网络传输将传感器采集到的数据
+                (土壤墒情、田间气象、流量统计、交易信息等)
+                上传到服务器...
+              </p>
+              <p class="pic">
+                <img src="../../assets/indexImg/save.jpg" alt>
+              </p>
+              <div class="more">
+                <span class="word">More</span>
+                <span class="jt">-></span>
+              </div>
+            </article>
+
+            <article class="caseArt">
+              <h1>
+                <span class="num">02</span>
+                <div class="partition">Two</div>
+              </h1>
+              <h6>农村饮水安全工程</h6>
+              <p class="words">
+                农村饮水安全工程信息化系统是一个全面的管理系统。
+                该系统由硬件系统和软件系统构成，硬件系统包含计算机、
+                自动控制、通讯技术和传感器技术，实现信息采集、信息传输...
+              </p>
+              <p class="pic">
+                <img src="../../assets/indexImg/safety.jpg" alt>
+              </p>
+              <div class="more">
+                <span class="word">More</span>
+                <span class="jt">-></span>
+              </div>
+            </article>
+
+            <article class="caseArt">
+              <h1>
+                <span class="num">03</span>
+                <div class="partition">Three</div>
+              </h1>
+              <h6>污水处理工程</h6>
+              <p class="words">
+                系统集成了完善的运维管理功能，打造厂站工艺流程、
+                生产数据、设备运行参数、视频监控信息等多维监管手段，
+                通过生产过程监控和厂区巡检管理，实现了生产工艺、持续监测...
+              </p>
+              <p class="pic">
+                <img src="../../assets/indexImg/sewage.png" alt>
+              </p>
+              <div class="more">
+                <span class="word">More</span>
+                <span class="jt">-></span>
+              </div>
+            </article>
+
+            <article class="caseArt case04">
+              <h1>
+                <span class="num">04</span>
+                <div class="partition">Four</div>
+              </h1>
+              <h6>智慧河长制工程</h6>
+              <p class="words">
+                河长制管理信息系统围绕河长制工作的实际需求，
+                基于河道网格化管理体系，依托GIS地理信息、GPS、
+                基站定位、云计算、物联网、大数据、移动通信网等技术，同时融合“受理...
+              </p>
+              <p class="pic">
+                <img src="../../assets/indexImg/wisdom.jpg" alt>
+              </p>
+              <div class="more">
+                <span class="word">More</span>
+                <span class="jt">-></span>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+      <div class="transition">
+        <img src="../../assets/transition.png" class="bottomTran">
+      </div>
+    </main>
   </div>
 </template>
 <style lang="less">
@@ -76,7 +170,7 @@
   }
   .main1 {
     width: 1200px;
-    margin: 65px auto 85px;
+    margin: 65px auto 0;
     // border: 1px red solid;
     section {
       position: relative;
@@ -160,10 +254,148 @@
     }
   }
   .main2 {
+    position: relative;
+    top: 108px;
+  }
+  .caseBody {
     height: 508px;
     background: #2463cc;
-    // position: relative;
-    // top:-54px;
+    section {
+      width: 1200px;
+      margin: 0 auto;
+    }
+    h4 {
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      padding-top: 32px;
+      span {
+        font-size: 28px;
+        font-weight: 800;
+      }
+      .wave {
+        width: 40px;
+      }
+    }
+    .artBody {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 38px;
+      .caseArt {
+        display: inline-block;
+        width: 286px;
+        height: 450px;
+        border: 1px #2463cc solid;
+        background: #ffffff;
+        z-index: 10;
+        position: relative;
+        box-shadow: 0px 6px 20px rgba(17, 130, 240, 0.2);
+        color: #888;
+        // font-size: 50px;
+        text-align: center;
+        cursor: pointer;
+        &:hover {
+          color: #2463cc;
+          h6 {
+            color: #2463cc;
+          }
+          .words {
+            display: none;
+          }
+          .pic {
+            display: block;
+          }
+          .partition {
+            &::before,
+            &::after {
+              background: #2463cc;
+            }
+          }
+          .more {
+            text-align: center;
+            color: #2463cc;
+            border-bottom: 1px #2463cc solid;
+            .jt {
+              display: none;
+            }
+          }
+        }
+        h1 {
+          // text-align: center;
+          margin-top: 8px;
+          .num {
+            font-size: 50px;
+          }
+        }
+        h6 {
+          margin-top: 22px;
+          font-size: 18px;
+          color: #000;
+        }
+        .words {
+          font-size: 12px;
+          margin-top: 40px;
+          padding: 0 22px;
+        }
+        .pic {
+          margin-top: 15px;
+          display: none;
+          img {
+            height: 186px;
+          }
+        }
+        .partition {
+          margin: 0 auto;
+          height: 10px;
+          font-size: 16px;
+          &::before {
+            content: "";
+            width: 52px;
+            height: 1px;
+            background: #888888;
+            // border: 1px red solid;
+            display: inline-block;
+            position: relative;
+            top: -5px;
+            margin-right: 10px;
+          }
+          &::after {
+            content: "";
+            width: 52px;
+            height: 1px;
+            background: #888888;
+            // border: 1px red solid;
+            display: inline-block;
+            position: relative;
+            top: -5px;
+            margin-left: 10px;
+          }
+        }
+        .more {
+          width: 114px;
+          color: #545454;
+          border-bottom: 1px #545454 solid;
+          position: absolute;
+          font-size: 12px;
+          bottom: 40px;
+          left: 50%;
+          text-align: left;
+          transform: translate(-50%, 0);
+          .word {
+            margin: 0 25px 0 25px;
+          }
+        }
+      }
+      .case01 {
+        transform: perspective(210px) rotateY(2deg) translateY(-5px);
+        height: 460px;
+      }
+      .case04 {
+        transform: perspective(210px) rotateY(-2deg) translateY(-5px);
+        height: 460px;
+      }
+    }
   }
 }
 </style>
@@ -180,13 +412,13 @@ export default {
         require("../../assets/carousel3.jpg")
       ],
       // 轮播图高度
-      carouselHeight: ((window.screenWidth * 880) / 1900).toFixed(1) + "px"
+      carouselHeight: ""
       // 过渡椭圆宽度
       // transitionWidth: ''
     };
   },
   mounted() {
-    // 初始化轮播高度+过渡椭圆宽度
+    // 初始化轮播高度
     let clientWidth = document.documentElement.clientWidth;
     this.carouselHeight = ((clientWidth * 880) / 1900).toFixed(1) + "px";
     // this.transitionWidth = clientWidth+"px";
@@ -194,7 +426,6 @@ export default {
     window.onresize = () => {
       return (() => {
         let clientWidth = document.body.clientWidth;
-
         // console.log(clientWidth)
         if (clientWidth >= 1200) {
           that.carouselHeight = ((clientWidth * 880) / 1900).toFixed(1) + "px";
