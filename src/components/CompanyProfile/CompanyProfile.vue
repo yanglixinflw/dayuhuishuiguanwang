@@ -1,14 +1,17 @@
 <template>
     <div class="companyProfile" ondragstart="return false">
          <img class="banner" alt="公司介绍banner图" src="../../assets/companyProfile.jpg"/>
+         <!-- 我们的优势 -->
          <section>
             <main>
+                <!-- 小标题 -->
                 <div class="title">
                     <h1>我们的优势</h1>
                     <div class='EnTitle'>OUR ADVATAGES</div>
                     <img class="icon" src='../../assets/icon.png'/>
                     <!-- <div class="icon"></div> -->
                 </div>
+                <!-- 我们的优势的内容 -->
                 <div class="content">
                     <div class="contentLeft">
                         <div class="kuang"></div>
@@ -30,6 +33,7 @@
                                 </span>
                             </li>
                         </ul>
+                        <!-- 轮播图 -->
                         <ul class="container" :style="containerStyle">
                             <li> 
                                 <div class="img">
@@ -69,13 +73,16 @@
                 </div>
             </main>
          </section>
+         <!-- 公司介绍 -->
          <section>
              <main>
+                 <!-- 公司介绍的小标题 -->
                  <div class="title">
                     <h1>公司介绍</h1>
                     <div class='EnTitle'>company introduction</div>
                     <img class="icon" src='../../assets/icon.png'/>
                 </div>
+                 <!-- 公司介绍的内容 -->
                 <div class="introduction">
                     <div class="introductionLeft">
                         <img src='../../assets/introduction.png'>
@@ -137,8 +144,8 @@ export default {
         word:"技术研发优势"
     },
    ],
-   currentIndex:1,
-   distance:-460,
+   currentIndex:1,//当前的轮播页
+   distance:-460,//每次移动的距离
    transitionEnd: true,
    speed: this.initialSpeed
   }
@@ -162,6 +169,7 @@ export default {
    window.onblur = function() { this.stop() }.bind(this)
    window.onfocus = function() { this.play() }.bind(this)
   },
+  //移动的距离，方向，速度
   move(offset, direction, speed) {
    if (!this.transitionEnd) return
    this.transitionEnd = false
@@ -171,6 +179,7 @@ export default {
    const destination = this.distance + offset * direction
    this.animate(destination, direction, speed)
   },
+  //优化动画
   animate(des, direc, speed) {
    if (this.temp) { 
     window.clearInterval(this.temp)
@@ -188,6 +197,7 @@ export default {
     }
    }, 20)
   },
+  //点击锚点跳转
   jump(index) {
    const direction = index - this.currentIndex >= 0 ? -1 : 1
    const offset = Math.abs(index - this.currentIndex) * 460
