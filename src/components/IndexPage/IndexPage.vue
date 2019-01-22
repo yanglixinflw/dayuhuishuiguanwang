@@ -277,9 +277,10 @@
           color: #000;
         }
         .words {
-          font-size: 12px;
+          font-size: 14px;
           margin-top: 40px;
           padding: 0 22px;
+          line-height: 22px;
         }
         .pic {
           margin-top: 15px;
@@ -320,7 +321,7 @@
           color: #545454;
           border-bottom: 1px #545454 solid;
           position: absolute;
-          font-size: 12px;
+          font-size: 14px;
           bottom: 40px;
           left: 50%;
           text-align: left;
