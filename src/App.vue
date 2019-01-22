@@ -23,10 +23,12 @@
 <script>
 import CommonHead from '@/components/Common/CommonHead.vue'
 import CommonFooter from '@/components/Common/CommonFooter.vue'
+import BackToTop from '@/components/Common/BackToTop.vue'
 export default {
   components:{
     CommonHead,
     CommonFooter,
+    BackToTop
   }
 }
 </script>
