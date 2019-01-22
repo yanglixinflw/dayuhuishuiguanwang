@@ -144,8 +144,8 @@ export default {
         word:"技术研发优势"
     },
    ],
-   currentIndex:1,
-   distance:-460,
+   currentIndex:1,//当前的轮播页
+   distance:-460,//每次移动的距离
    transitionEnd: true,
    speed: this.initialSpeed
   }
@@ -169,6 +169,7 @@ export default {
    window.onblur = function() { this.stop() }.bind(this)
    window.onfocus = function() { this.play() }.bind(this)
   },
+  //移动的距离，方向，速度
   move(offset, direction, speed) {
    if (!this.transitionEnd) return
    this.transitionEnd = false
@@ -178,6 +179,7 @@ export default {
    const destination = this.distance + offset * direction
    this.animate(destination, direction, speed)
   },
+  //优化动画
   animate(des, direc, speed) {
    if (this.temp) { 
     window.clearInterval(this.temp)
@@ -195,6 +197,7 @@ export default {
     }
    }, 20)
   },
+  //点击锚点跳转
   jump(index) {
    const direction = index - this.currentIndex >= 0 ? -1 : 1
    const offset = Math.abs(index - this.currentIndex) * 460
