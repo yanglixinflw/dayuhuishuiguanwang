@@ -1,5 +1,5 @@
 <template>
-  <div class="solution">
+  <div>
     <Solution/>
   </div>
 </template>
@@ -9,6 +9,7 @@
         name: "solution",
         components: {
             Solution
-        }
-    };
+        },
+    }
+    
 </script>
