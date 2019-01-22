@@ -26,7 +26,7 @@
         <router-link to="/companyProfile">
           <div class="more">
             More
-            <span>-></span>
+            <span>&rarr;</span>
           </div>
         </router-link>
         <div class="picture">
@@ -68,7 +68,7 @@
               </p>
               <div class="more">
                 <span class="word">More</span>
-                <span class="jt">-></span>
+                <span class="jt">&rarr;</span>
               </div>
             </article>
 
@@ -88,7 +88,7 @@
               </p>
               <div class="more">
                 <span class="word">More</span>
-                <span class="jt">-></span>
+                <span class="jt">&rarr;</span>
               </div>
             </article>
 
@@ -108,7 +108,7 @@
               </p>
               <div class="more">
                 <span class="word">More</span>
-                <span class="jt">-></span>
+                <span class="jt">&rarr;</span>
               </div>
             </article>
 
@@ -128,7 +128,8 @@
               </p>
               <div class="more">
                 <span class="word">More</span>
-                <span class="jt">-></span>
+                <span class="jt">	&rarr;
+                </span>
               </div>
             </article>
           </div>
@@ -147,7 +148,7 @@
     width: 100%;
   }
   .el-carousel__indicator {
-    padding: 12px 44px;
+    padding: 12px 20px;
   }
   .el-carousel__button {
     width: 60px;
