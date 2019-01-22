@@ -86,7 +86,7 @@ export default {
   .informationBg {
     width: 100%;
     padding-top: 116px;
-    background: url(../../assets/footerBg.png) no-repeat;
+    background: url(../../assets/footerBg.png) no-repeat 100%;
     .information {
       display: flex;
       width: 48%;

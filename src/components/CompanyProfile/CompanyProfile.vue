@@ -302,6 +302,7 @@ export default {
                         height: 461px;
                         list-style: none;
                         margin-right: 42px;
+                        cursor: pointer;
                         li{
                             position: relative;
                             width: 100%;
