@@ -238,7 +238,7 @@ export default {
                 margin-bottom: 42px;   
                 h1{
                     color: #676767;
-                    font-size: 14px;
+                    font-size: 16px;
                     text-align: center
                 }
                 .EnTitle{
