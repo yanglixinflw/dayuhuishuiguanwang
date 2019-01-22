@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <CommonHead/>
+    <keep-alive>
+      <CommonHead/>
+    </keep-alive>
     <div id="content">
       <router-view/>
     </div>
