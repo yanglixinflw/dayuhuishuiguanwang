@@ -1,14 +1,17 @@
 <template>
     <div class="companyProfile" ondragstart="return false">
          <img class="banner" alt="公司介绍banner图" src="../../assets/companyProfile.jpg"/>
+         <!-- 我们的优势 -->
          <section>
             <main>
+                <!-- 小标题 -->
                 <div class="title">
                     <h1>我们的优势</h1>
                     <div class='EnTitle'>OUR ADVATAGES</div>
                     <img class="icon" src='../../assets/icon.png'/>
                     <!-- <div class="icon"></div> -->
                 </div>
+                <!-- 我们的优势的内容 -->
                 <div class="content">
                     <div class="contentLeft">
                         <div class="kuang"></div>
@@ -30,6 +33,7 @@
                                 </span>
                             </li>
                         </ul>
+                        <!-- 轮播图 -->
                         <ul class="container" :style="containerStyle">
                             <li> 
                                 <div class="img">
@@ -69,13 +73,16 @@
                 </div>
             </main>
          </section>
+         <!-- 公司介绍 -->
          <section>
              <main>
+                 <!-- 公司介绍的小标题 -->
                  <div class="title">
                     <h1>公司介绍</h1>
                     <div class='EnTitle'>company introduction</div>
                     <img class="icon" src='../../assets/icon.png'/>
                 </div>
+                 <!-- 公司介绍的内容 -->
                 <div class="introduction">
                     <div class="introductionLeft">
                         <img src='../../assets/introduction.png'>
