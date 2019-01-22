@@ -19,12 +19,6 @@
   cursor: pointer;
 }
 .content {
-  // font-size: 20px;
-  // border-top:1px #2463CC solid;
-  // width: 20px;
-  // height: 28px;
-  // color: #2463CC;
-  // background: red;
   img {
     width: 27px;
     height: 27px;

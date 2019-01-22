@@ -16,8 +16,8 @@
             <el-menu-item index="/">
               <router-link to="/">首页</router-link>
             </el-menu-item>
-            <el-menu-item index="/solution">
-              <router-link to="/solution">解决方案</router-link>
+            <el-menu-item index="/solution/:id">
+              <router-link to="/solution/0">解决方案</router-link>
             </el-menu-item>
             <el-menu-item index="/companyProfile">
               <router-link to="/companyProfile">公司介绍</router-link>
