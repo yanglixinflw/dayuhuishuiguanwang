@@ -3,16 +3,13 @@
     <el-row type="flex">
       <el-col :span="10">
         <div class="logoName">
-          <img src='../../assets/logo.png' @click="handleLogoClick"/>
+          <img v-if="activeIndex=='/'" src="../../assets/logoIndex.png" @click="handleLogoClick" />
+          <img v-else src="../../assets/logo.png" @click="handleLogoClick" />
         </div>
       </el-col>
       <el-col :span="14">
-        <div class="navMenu">
-          <el-menu 
-            :default-active="activeIndexChange" 
-            mode="horizontal" 
-            @select="handleSelect"
-          >
+        <div v-if="activeIndex=='/'" class="isIndexNavMenu ">
+          <el-menu :default-active="activeIndexChange" mode="horizontal" @select="handleSelect">
             <el-menu-item index="/">
               <router-link to="/">首页</router-link>
             </el-menu-item>
@@ -26,7 +23,24 @@
               <!-- <router-link to="">演示系统</router-link> -->
               <a href="http://nysj.huishuiyun.com/#/login" target="_blank">演示系统</a>
             </el-menu-item>
-            </el-menu>
+          </el-menu>
+        </div>
+        <div v-else class="navMenu">
+          <el-menu :default-active="activeIndexChange" mode="horizontal" @select="handleSelect">
+            <el-menu-item index="/">
+              <router-link to="/">首页</router-link>
+            </el-menu-item>
+            <el-menu-item index="/solution/:id">
+              <router-link to="/solution/0">解决方案</router-link>
+            </el-menu-item>
+            <el-menu-item index="/companyProfile">
+              <router-link to="/companyProfile">公司介绍</router-link>
+            </el-menu-item>
+            <el-menu-item index="/demoDevice">
+              <!-- <router-link to="">演示系统</router-link> -->
+              <a href="http://nysj.huishuiyun.com/#/login" target="_blank">演示系统</a>
+            </el-menu-item>
+          </el-menu>
         </div>
       </el-col>
     </el-row>
@@ -34,94 +48,152 @@
 </template>
 
 <script>
-import eventBus from '../../assets/eventBus/eventBus.js'
+import eventBus from "../../assets/eventBus/eventBus.js";
 export default {
   name: "CommonHead",
-    data() {
-        return {
-            activeIndex: window.location.pathname,
-        };
+  data() {
+    return {
+      activeIndex: window.location.pathname,
+    };
+  },
+  methods: {
+    // eventBus传递path
+    handleSelect(key, keyPath) {
+      eventBus.$emit("passSomeThing", key);
+      this.activeIndex = key;
     },
-    methods: {
-      // eventBus传递path
-      handleSelect(key, keyPath) {
-        eventBus.$emit('passSomeThing',key);
-        this.activeIndex=key;
-      },
-      handleLogoClick(){
-        this.activeIndex="/";
-        eventBus.$emit('passSomeThing','/');
-        this.$router.push('/');
-      },
-    },
-    computed:{
-      activeIndexChange:function(){
-        this.activeIndex=window.location.pathname;
-        console.log(this.activeIndex)
-        return this.activeIndex
-      }
-    },
+    handleLogoClick() {
+      this.activeIndex = "/";
+      eventBus.$emit("passSomeThing", "/");
+      this.$router.push("/");
+    }
+  },
+  computed: {
+    activeIndexChange: function() {
+      this.activeIndex = window.location.pathname;
+      // console.log(this.activeIndex);
+      return this.activeIndex;
+    }
+  }
 };
 </script>
 
 <style lang="less" scoped>
-    .head{
-        // display: flex;
-        // position:fixed;
-        // top:0;
-        background-color: #fff;
-        width: 100%;
-        height: 68px; 
-        line-height: 68px;
-        .logoName{
-          text-align: center;
-          img{
-            position: relative;
-            top: 20px;
-            cursor: pointer;
-          }
-        }
-        .navMenu{
-          text-align: center;
-          .el-menu--horizontal{
-            border-bottom:0;
-            .el-menu-item{
-              width:50px;
-              height: 68px;
-              line-height: 90px;
-              padding: 0;
-              margin: 0 58px ;
-              color: #888888;
-              font-size: 12px;
-              a{
-                display: block;
-                text-decoration: none;
-                height: 68px;
-                font-size: 14px;
-                &:active{
-                  font-weight: bold;
-                }
-              }
-            }
-            .is-active{
-              color:#2463CC;
-              border-bottom: 2px solid #2463CC;
-              a{
-                font-weight: bold;
-              }
-            }
-          }
-        }
+.head {
+  // display: flex;
+  // position:fixed;
+  // top:0;
+  // background-color: #fff;
+  width: 100%;
+  height: 68px;
+  line-height: 68px;
+  position: relative;
+  z-index: 10;
+  .logoName {
+    text-align: center;
+    img {
+      position: relative;
+      top: 20px;
+      cursor: pointer;
     }
-    @media(max-width: 1159px){
-      .head{
-        .navMenu{
-          .el-menu-item{
-            margin: 0 52px !important;
+  }
+  .navMenu {
+    text-align: center;
+    .el-menu--horizontal {
+      border-bottom: 0;
+      background-color: transparent;
+      .el-menu-item {
+        height: 68px;
+        line-height: 90px;
+        padding: 0;
+        margin: 0 58px;
+        color: #888888;
+        font-size: 12px;
+        border-bottom-width:0;
+        transition:all linear 2s;
+        &:hover {
+          background-color: transparent;
+          border-bottom: 2px solid #2463cc;
+        }
+        a {
+          display: block;
+          text-decoration: none;
+          height: 68px;
+          font-size: 14px;
+          box-sizing: border-box;
+          transition:all linear 2s;
+          &:active {
+            font-weight: bold;
+          }
+          &:hover{
+            border-bottom: 2px solid #2463cc;
           }
         }
-      }  
+      }
+      .is-active {
+        color: #2463cc;
+        border-bottom: 2px solid #2463cc;
+        a {
+          font-weight: bold;
+        }
+      }
     }
+  }
+  .isIndexNavMenu {
+    text-align: center;
+    .el-menu--horizontal {
+      border-bottom: 0;
+      background-color: transparent;
+      .el-menu-item {
+        color: #fff;
+        width: 56px;
+        height: 68px;
+        line-height: 90px;
+        padding: 0;
+        margin: 0 58px;
+        font-size: 12px;
+        border-bottom:0px solid #fff;;
+        transition:all linear 2s;
+        &:hover {
+          background-color: transparent;
+          border-bottom: 2px solid #fff;
+        }
+        a {
+          display: block;
+          text-decoration: none;
+          height: 68px;
+          font-size: 14px;
+          &:active {
+            font-weight: bold;
+          }
+        }
+      }
+      .is-active {
+        color: #fff;
+        border-bottom: 2px solid #fff;
+        a {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1159px) {
+  .head {
+    .navMenu {
+      .el-menu-item {
+        margin: 0 52px !important;
+      }
+    }
+    .isIndexNavMenu{
+      .el-menu-item {
+        margin: 0 52px !important;
+      }
+    }
+  }
+}
+  
+
 </style>
 
 

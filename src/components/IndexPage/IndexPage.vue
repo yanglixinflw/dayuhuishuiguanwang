@@ -49,31 +49,29 @@
             <br>
             <img class="wave" src="../../assets/wave.png" alt>
           </h4>
-          <div class="artBody" >
+          <div class="artBody">
             <!-- 渲染中间部分 -->
-              <article 
-              class="caseArt" 
-              v-for="item in caseData" 
+            <article
+              class="caseArt"
+              v-for="item in caseData"
               :class='item.id=="01"?"case01":item.id=="04"?"case04":""'
-              :key='item.id'
-              @click='clickHandler(item.path)'
-              >
-                <h1>
-                  <span class="num">{{item.id}}</span>
-                  <div class="partition">{{item.word}}</div>
-                </h1>
-                <h6>{{item.title}}</h6>
-                <p class="words">
-                  {{item.part}}
-                </p>
-                <p class="pic">
-                  <img :src="item.img" alt>
-                </p>
-                <div class="more">
-                  <span class="word">More</span>
-                  <span class="jt">&rarr;</span>
-                </div>
-              </article>
+              :key="item.id"
+              @click="clickHandler(item.path)"
+            >
+              <h1>
+                <span class="num">{{item.id}}</span>
+                <div class="partition">{{item.word}}</div>
+              </h1>
+              <h6>{{item.title}}</h6>
+              <p class="words">{{item.part}}</p>
+              <p class="pic">
+                <img :src="item.img" alt>
+              </p>
+              <div class="more">
+                <span class="word">More</span>
+                <span class="jt">&rarr;</span>
+              </div>
+            </article>
           </div>
         </section>
       </div>
@@ -85,9 +83,14 @@
 </template>
 <style lang="less">
 .indexPage {
+  
   img {
     height: 100%;
     width: 100%;
+  }
+  .el-carousel{
+    position: relative;
+  top:-68px;
   }
   .el-carousel__indicator {
     padding: 12px 20px;
@@ -113,7 +116,7 @@
   }
   .main1 {
     width: 1200px;
-    margin: 65px auto 0;
+    margin: 0 auto;
     // border: 1px red solid;
     section {
       position: relative;
@@ -135,8 +138,9 @@
       }
       p {
         width: 600px;
-        font-size: 12px;
+        font-size: 14px;
         color: #636363;
+        line-height: 22px;
       }
       a {
         text-decoration: none;
@@ -369,7 +373,7 @@ export default {
                   通过网络传输将传感器采集到的数据
                   (土壤墒情、田间气象、流量统计、交易信息等)
                   上传到服务器...`,
-          img:require('../../assets/indexImg/save.jpg')
+          img: require("../../assets/indexImg/save.jpg")
         },
         {
           id: "02",
@@ -379,7 +383,7 @@ export default {
           part: ` 农村饮水安全工程信息化系统是一个全面的管理系统。
                   该系统由硬件系统和软件系统构成，硬件系统包含计算机、
                   自动控制、通讯技术和传感器技术，实现信息采集、信息传输...`,
-          img:require('../../assets/indexImg/safety.jpg')
+          img: require("../../assets/indexImg/safety.jpg")
         },
         {
           id: "03",
@@ -389,7 +393,7 @@ export default {
           part: ` 系统集成了完善的运维管理功能，打造厂站工艺流程、
                   生产数据、设备运行参数、视频监控信息等多维监管手段，
                   通过生产过程监控和厂区巡检管理，实现了生产工艺、持续监测...`,
-          img:require('../../assets/indexImg/sewage.png')
+          img: require("../../assets/indexImg/sewage.png")
         },
         {
           id: "04",
@@ -399,7 +403,7 @@ export default {
           part: `河长制管理信息系统围绕河长制工作的实际需求，
                   基于河道网格化管理体系，依托GIS地理信息、GPS、
                   基站定位、云计算、物联网、大数据、移动通信网等技术，同时融合“受理...`,
-          img:require('../../assets/indexImg/wisdom.jpg')
+          img: require("../../assets/indexImg/wisdom.jpg")
         }
       ]
     };
@@ -424,9 +428,9 @@ export default {
       })();
     };
   },
-  methods:{
-    clickHandler(path){
-      this.$router.push(path)
+  methods: {
+    clickHandler(path) {
+      this.$router.push(path);
     }
   }
 };
