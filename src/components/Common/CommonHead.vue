@@ -87,6 +87,7 @@ export default {
           text-align: center;
           .el-menu--horizontal{
             border-bottom:0;
+            background-color: transparent;
             .el-menu-item{
               width:50px;
               height: 68px;
@@ -95,6 +96,9 @@ export default {
               margin: 0 58px ;
               color: #888888;
               font-size: 12px;
+              &:hover{
+                background-color: transparent;
+              }
               a{
                 display: block;
                 text-decoration: none;
@@ -114,6 +118,42 @@ export default {
             }
           }
         }
+        .isIndexHead{
+          text-align: center;
+          .el-menu--horizontal{
+            border-bottom:0;
+            background-color: transparent;
+            .el-menu-item{
+              color: #fff;
+              width:50px;
+              height: 68px;
+              line-height: 90px;
+              padding: 0;
+              margin: 0 58px ;
+              font-size: 12px;
+              &:hover{
+                background-color: transparent;
+              }
+              a{
+                display: block;
+                text-decoration: none;
+                height: 68px;
+                font-size: 14px;
+                &:active{
+                  font-weight: bold;
+                }
+              }
+            }
+            .is-active{
+              color: #fff;
+              border-bottom: 2px solid #fff;
+              a{
+                font-weight: bold;
+              }
+            }
+          }
+                
+            }
     }
     @media(max-width: 1159px){
       .head{
