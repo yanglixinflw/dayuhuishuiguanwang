@@ -68,7 +68,7 @@
                                 <div class="img">
                                     <img :src="item.img" alt=""/>
                                     <div class="instructions">
-                                        <div class='word'>{{item.word}}</div>
+                                        <div class='word'><div>{{item.word}}</div></div>
                                         <div class="triangle"></div>
                                     </div>
                                 </div>
@@ -410,10 +410,24 @@ export default {
                                     background:#2463cc;
                                     position: relative;
                                     .word{
-                                        width: 28px;
+                                        width: 24px;
+                                        height: 190px;
+                                        margin:50px auto;
+                                        position: relative;
                                         font-size:24px;
                                         color:#fff;
-                                        margin:60px auto 0;
+                                        div{
+                                        width: 24px;
+                                        position: absolute;
+                                        top:0;
+                                        bottom:0;
+                                        height: 150px;
+                                        // writing-mode: vertical-lr;
+                                        // writing-mode: tb-lr;
+                                        margin:auto;
+                                        word-wrap: break-word; 
+                                        letter-spacing: 20px; 
+                                        }
                                     }
                                     .triangle{
                                         position:absolute;
