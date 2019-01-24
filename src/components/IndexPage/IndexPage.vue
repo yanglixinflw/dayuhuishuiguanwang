@@ -116,7 +116,7 @@
   }
   .main1 {
     width: 1200px;
-    margin: 65px auto 0;
+    margin: 0 auto;
     // border: 1px red solid;
     section {
       position: relative;
