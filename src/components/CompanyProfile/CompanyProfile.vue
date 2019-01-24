@@ -404,6 +404,7 @@ export default {
                             }
                            .description{
                                 font-size:12px;
+                                line-height: 20px;
                                 color:#636363;
                             }
                        }
@@ -426,6 +427,7 @@ export default {
                     width: 614px;
                     height: 80px;
                     font-size: 14px;
+                    line-height: 24px;
                     color:#636363;
                     .paragraph1{
                         margin-bottom: 66px;
