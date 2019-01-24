@@ -41,7 +41,7 @@ export default {
   }
   .program {
     .el-menu {
-        width: 63.16%;
+        width:1200px;
         margin: 0 auto;
         position: relative;
         top: -135px;

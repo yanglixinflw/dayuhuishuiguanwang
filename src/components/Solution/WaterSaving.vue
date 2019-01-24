@@ -70,7 +70,7 @@ export default {
 
 <style lang="less" scoped>
     .proContent{
-        width: 67.26%;
+        width: 67.37%;
         margin:0 auto;
         position: relative;
         top: -100px;
@@ -106,7 +106,7 @@ export default {
     }
     .proItem{
         position: relative;
-        width:93.45%;
+        width:1200px;
         margin:45px auto 67px;
         .yuanmo{
             width:100%;
@@ -163,7 +163,7 @@ export default {
             height: 84px;
             background-color:#4B7ED5; 
             position: absolute;
-            right:17.3%;
+            right:208px;
             top:274px;
         }
         .colorStroke{
