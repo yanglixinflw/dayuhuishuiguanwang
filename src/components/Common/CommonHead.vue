@@ -69,10 +69,12 @@ export default {
         // display: flex;
         // position:fixed;
         // top:0;
-        background-color: #fff;
+        // background-color: #fff;
         width: 100%;
         height: 68px; 
         line-height: 68px;
+        position: relative;
+        z-index: 10;
         .logoName{
           text-align: center;
           img{
