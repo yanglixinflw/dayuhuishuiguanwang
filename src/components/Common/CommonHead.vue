@@ -109,24 +109,33 @@ export default {
         margin: 0 58px;
         color: #888888;
         font-size: 12px;
-        border-bottom-width:0;
-        transition:all linear 2s;
         &:hover {
           background-color: transparent;
           border-bottom: 2px solid #2463cc;
         }
+        a::after{
+            content: '';
+            width: 0;
+            height: 2px;
+            background-color: #2463cc;
+            position: absolute;
+            left: 50%;
+            bottom: -2px;
+            transform: translateX(-50%);
+            transition: .3s linear;
+          }
         a {
           display: block;
           text-decoration: none;
           height: 68px;
           font-size: 14px;
           box-sizing: border-box;
-          transition:all linear 2s;
+          transition:all linear 0.2s;
           &:active {
             font-weight: bold;
           }
-          &:hover{
-            border-bottom: 2px solid #2463cc;
+          &:hover::after{
+            width: 56px;
           }
         }
       }
@@ -152,12 +161,20 @@ export default {
         padding: 0;
         margin: 0 58px;
         font-size: 12px;
-        border-bottom:0px solid #fff;;
-        transition:all linear 2s;
         &:hover {
           background-color: transparent;
-          border-bottom: 2px solid #fff;
         }
+        a::after{
+            content: '';
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            bottom: -2px;
+            transform: translateX(-50%);
+            transition: .3s linear;
+          }
         a {
           display: block;
           text-decoration: none;
@@ -165,6 +182,9 @@ export default {
           font-size: 14px;
           &:active {
             font-weight: bold;
+          }
+          &:hover::after{
+            width: 56px;
           }
         }
       }
