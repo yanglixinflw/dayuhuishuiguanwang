@@ -238,7 +238,7 @@ export default {
                 margin-bottom: 42px;   
                 h1{
                     color: #676767;
-                    font-size: 14px;
+                    font-size: 16px;
                     text-align: center
                 }
                 .EnTitle{
@@ -404,6 +404,7 @@ export default {
                             }
                            .description{
                                 font-size:12px;
+                                line-height: 20px;
                                 color:#636363;
                             }
                        }
@@ -426,6 +427,7 @@ export default {
                     width: 614px;
                     height: 80px;
                     font-size: 14px;
+                    line-height: 24px;
                     color:#636363;
                     .paragraph1{
                         margin-bottom: 66px;
