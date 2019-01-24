@@ -1,37 +1,20 @@
 <template>
-  <div class="head">
+  <div v-bind:class="headClassName">
     <el-row type="flex">
       <el-col :span="10">
         <div class="logoName">
-          <img v-if="activeIndex=='/'" src="../../assets/logoIndex.png" @click="handleLogoClick" />
+          <img v-if="headClassName=='isIndexHead'" src="../../assets/logoIndex.png" @click="handleLogoClick" />
           <img v-else src="../../assets/logo.png" @click="handleLogoClick" />
         </div>
       </el-col>
       <el-col :span="14">
-        <div v-if="activeIndex=='/'" class="isIndexNavMenu ">
-          <el-menu :default-active="activeIndexChange" mode="horizontal" @select="handleSelect">
+        <div class="navMenu">
+          <el-menu :default-active="activeIndex" mode="horizontal" @select="handleSelect">
             <el-menu-item index="/">
               <router-link to="/">首页</router-link>
             </el-menu-item>
-            <el-menu-item index="/solution/:id">
-              <router-link to="/solution/0">解决方案</router-link>
-            </el-menu-item>
-            <el-menu-item index="/companyProfile">
-              <router-link to="/companyProfile">公司介绍</router-link>
-            </el-menu-item>
-            <el-menu-item index="/demoDevice">
-              <!-- <router-link to="">演示系统</router-link> -->
-              <a href="http://nysj.huishuiyun.com/#/login" target="_blank">演示系统</a>
-            </el-menu-item>
-          </el-menu>
-        </div>
-        <div v-else class="navMenu">
-          <el-menu :default-active="activeIndexChange" mode="horizontal" @select="handleSelect">
-            <el-menu-item index="/">
-              <router-link to="/">首页</router-link>
-            </el-menu-item>
-            <el-menu-item index="/solution/:id">
-              <router-link to="/solution/0">解决方案</router-link>
+            <el-menu-item index="/solution">
+              <router-link to="/solution">解决方案</router-link>
             </el-menu-item>
             <el-menu-item index="/companyProfile">
               <router-link to="/companyProfile">公司介绍</router-link>
@@ -48,42 +31,53 @@
 </template>
 
 <script>
-import eventBus from "../../assets/eventBus/eventBus.js";
 export default {
   name: "CommonHead",
   data() {
     return {
+      navMenu:[
+        {displayName:"首页",path:"/",id:0},
+        {displayName:"解决方案",path:"/solution/0",id:1},
+        {displayName:"公司介绍",path:"/companyProfile",id:2},
+        {displayName:"演示系统",path:"/http://nysj.huishuiyun.com/#/login",id:3},
+      ],
       activeIndex: window.location.pathname,
+      headClassName:"",
     };
   },
   methods: {
     // eventBus传递path
     handleSelect(key, keyPath) {
-      eventBus.$emit("passSomeThing", key);
       this.activeIndex = key;
     },
     handleLogoClick() {
       this.activeIndex = "/";
-      eventBus.$emit("passSomeThing", "/");
       this.$router.push("/");
     }
   },
-  computed: {
-    activeIndexChange: function() {
-      this.activeIndex = window.location.pathname;
-      // console.log(this.activeIndex);
-      return this.activeIndex;
+  watch:{
+    $route:{
+      handler:function(val,oldVal){
+        let pathname = val.path;
+        this.headClassName=pathname=='/'?"isIndexHead":"head"
+        let index = pathname.split('/')[1]
+        this.$forceUpdate()
+      },
+      //深度观察监听
+      deep:true
     }
-  }
+  },
+  mounted(){
+    this.headClassName = window.location.pathname=='/'?"isIndexHead":"head"
+    if(window.location.pathname.indexOf("/solution")>-1){
+      this.activeIndex="/solution"
+    }
+  },
 };
 </script>
 
 <style lang="less" scoped>
 .head {
-  // display: flex;
-  // position:fixed;
-  // top:0;
-  // background-color: #fff;
   width: 100%;
   height: 68px;
   line-height: 68px;
@@ -103,6 +97,7 @@ export default {
       border-bottom: 0;
       background-color: transparent;
       .el-menu-item {
+        width: 56px;
         height: 68px;
         line-height: 90px;
         padding: 0;
@@ -130,8 +125,10 @@ export default {
           height: 68px;
           font-size: 14px;
           box-sizing: border-box;
-          transition:all linear 0.2s;
           &:active {
+            font-weight: bold;
+          }
+          &:hover{
             font-weight: bold;
           }
           &:hover::after{
@@ -148,7 +145,22 @@ export default {
       }
     }
   }
-  .isIndexNavMenu {
+}
+.isIndexHead {
+  width: 100%;
+  height: 68px;
+  line-height: 68px;
+  position: relative;
+  z-index: 10;
+  .logoName {
+    text-align: center;
+    img {
+      position: relative;
+      top: 20px;
+      cursor: pointer;
+    }
+  }
+  .navMenu {
     text-align: center;
     .el-menu--horizontal {
       border-bottom: 0;
@@ -183,6 +195,9 @@ export default {
           &:active {
             font-weight: bold;
           }
+          &:hover{
+            font-weight: bold;
+          }
           &:hover::after{
             width: 56px;
           }
@@ -198,6 +213,7 @@ export default {
     }
   }
 }
+  
 @media (max-width: 1159px) {
   .head {
     .navMenu {
@@ -205,7 +221,9 @@ export default {
         margin: 0 52px !important;
       }
     }
-    .isIndexNavMenu{
+  }
+  .isIndexHead {
+    .navMenuNavMenu{
       .el-menu-item {
         margin: 0 52px !important;
       }

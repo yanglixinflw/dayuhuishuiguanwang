@@ -4,8 +4,8 @@
       <img alt="解决方案banner图" src="../../assets/solution.jpg"/>
     </div>
     <div class="program">
-        <el-menu>
-            <el-menu-item v-for="item in programData" :key="item.id" index="item.id" >
+        <el-menu :default-active="activeIndex" @select="handleSelect">
+            <el-menu-item v-for="item in programData" :key="item.id" :index="item.id" >
                 <router-link :to="{path: '/solution/' + item.id}" ><i :class="item.className"></i>{{item.displayName}}</router-link>
             </el-menu-item>
         </el-menu>
@@ -19,16 +19,23 @@ export default {
     data:function(){
       return{
           programData:[
-              {className:'jieshuiIcon',displayName:'农村高效节水',id:0},
-              {className:'yinshuiIcon',displayName:'农民饮水安全工程',id:1},
-              {className:'wushuiIcon',displayName:'污水处理工程',id:2},
-              {className:'hezhangzhiIcon',displayName:'智慧河长制工程',id:3},
+              {className:'jieshuiIcon',displayName:'农村高效节水',id:'0'},
+              {className:'yinshuiIcon',displayName:'农民饮水安全工程',id:'1'},
+              {className:'wushuiIcon',displayName:'污水处理工程',id:'2'},
+              {className:'hezhangzhiIcon',displayName:'智慧河长制工程',id:'3'},
           ],
+          activeIndex:window.location.pathname.split('/')[2] || "0",
       }
     },
     mounted:function(){
        
     },
+    methods:{
+        handleSelect(key, keyPath) {
+            // console.log()
+        this.activeIndex = key;
+    },
+    }
 };
 </script>
 <style lang="less" scoped>

@@ -36,7 +36,6 @@
 </template>
 
 <script>
-import eventBus from '../../assets/eventBus/eventBus.js'
 export default {
   name: "CommonFooter",
   data: function() {
@@ -46,35 +45,21 @@ export default {
       pathNameChange:""
     };
   },
-  mounted(){
-    // console.log(window.location.pathname)
-    // this.pathNameChange=window.location.pathname === "/" ? "indexFooter" : null;
-    // window.onresize=()=>{
-    //   console.log(123)
-    // }
-    let that = this
-    eventBus.$on('passSomeThing',(key)=>{
-      that.pathNameChange=key !=='/'?"notIndexFooter" : null
-    })
+   watch:{
+    $route:{
+      handler:function(val,oldVal){
+        let pathname = window.location.pathname;
+        this.pathNameChange=pathname=='/'?null:"notIndexFooter"
+        this.$forceUpdate()
+      },
+      //深度观察监听
+      deep:true
+    }
   },
-  // watch: {
-  //   pathNameChange: function() {
-  //     console.log(window.location.pathname);
-  //     return this.pathNameChange=window.location.pathname === "/" ? "indexFooter" : null;
-  //   }
-  // },
-  // computed: {
-  //   pathNameChange: function() {
-  //     console.log(window.location.pathname);
-  //     return window.location.pathname === "/" ? "indexFooter" : null;
-  //     // console
-  //   }
-  // },
-  // beforeDestroy: {
-  //   pathNameChange: function() {
-  //     console.log("销毁");
-  //   }
-  // }
+  mounted(){
+    let pathname = window.location.pathname;
+    this.pathNameChange=pathname=='/'?null:"notIndexFooter"
+  }
 };
 </script>
 <style lang="less" scoped>
