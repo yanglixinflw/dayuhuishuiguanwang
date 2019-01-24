@@ -124,6 +124,7 @@ export default {
                 }
                 .info2{
                     display: flex;
+                    justify-content: space-between;
                     margin-left:34px;
                     div{
                         font-size: 16px;

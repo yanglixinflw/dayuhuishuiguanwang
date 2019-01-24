@@ -58,6 +58,7 @@ export default {
   watch:{
     $route:{
       handler:function(val,oldVal){
+        //do Something 判断是否为主页
         let pathname = val.path;
         this.headClassName=pathname=='/'?"isIndexHead":"head"
         let index = pathname.split('/')[1]

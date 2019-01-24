@@ -132,13 +132,14 @@ export default {
                 }
                 .info2{
                     display: flex;
+                    justify-content: space-between;
                     margin-left:34px;
                     div{
                         font-size: 16px;
                         color:#757575;
                         font-weight: normal;
                         margin-right: 56px;
-                        width: 198px;
+                        // width: 198px;
                         span{
                             font-size: 30px;
                             color:#2463cc;
@@ -150,7 +151,7 @@ export default {
                             position: relative;
                         }
                         p{
-                            width: 128px;
+                            // width: 128px;
                             display: inline-block;
                         }
                     }
