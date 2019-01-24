@@ -5,20 +5,17 @@
          <section>
              <main>
                  <!-- 公司介绍的小标题 -->
-                 <div class="title">
-                    <h1>公司介绍</h1>
-                    <div class='EnTitle'>company introduction</div>
-                    <img class="icon" src='../../assets/icon.png'/>
+                 <div class="headTitle">
+                    <div class="logo"><img src="../../assets/companyLogo.png" alt="大禹公司logo"></div>  
+                    <h5>HUISHUI TECHNOLOGY</h5>
+                    <h1>大禹慧水科技</h1>
+                    <div class="sannong"><img src="../../assets/sannong.png" alt="让农业更智慧 让农村更美好 让农民更幸福"></div>
                 </div>
                  <!-- 公司介绍的内容 -->
                 <div class="introduction">
-                    <div class="introductionLeft">
-                        <img src='../../assets/introduction.png'>
-                    </div>
-                    <div class="introductionRight">
-                        <div class="paragraph1">大禹慧水科技是以水利行业专家为班底，依托于大禹节水集团在水利建设方面的资源优势，所成立的水利信息化专业公司，旨在利用物联网、大数据、云计算等新一代信息技术，推进传统水利业务的深度整合，构建集人工智能和行业专家团队为一体的综合性智慧水利云平台，为水利行业信息化的建设和发展提供先进的技术与优质的服务。</div>
-                        <div class="paragraph2">目前，公司产品和解决方案已广泛应用于国内的灌区、示范园区及粮食生产基地，承接的重大项目包括：通辽市2018年度农田水利高效节水灌溉工程、云南元谋11.4万亩高效节水灌溉项目、云南祥云5万亩高效节水灌溉PPP项目、天津武清区污水处理综合治理项目、邹城市农村供水巩固提升工程PPP项目，甘肃省武山县西梁灌区农业水价综合改革项目、内蒙古呼伦贝尔信息化建设工程、敦煌市农业技术推广中心水肥一体化核心示范区温室物联网示范区、浙江省钱塘江河长制管理信息系统、衢州市河长信息管理系统平台建设等，这些项目得到了广大用户的一致好评。公司始终秉承合作双赢理念，为客户量身定制高质量的产品与服务，致力成为客户可信赖的合作伙伴。</div>
-                    </div>
+                    <div class="paragraph paragraph1">大禹慧水科技是以水利行业专家为班底，依托于大禹节水集团在水利建设方面的资源优势，所成立的水利信息化专业公司，旨在利用物联网、大数据、云计算等新一代信息技术，推进传统水利业务的深度整合，构建集人工智能和行业专家团队为一体的综合性智慧水利云平台，为水利行业信息化的建设和发展提供先进的技术与优质的服务。</div>
+                    <div class="paragraph paragraph2">目前，公司产品和解决方案已广泛应用于国内的灌区、示范园区及粮食生产基地，承接的重大项目包括：通辽市2018年度农田水利高效节水灌溉工程、云南元谋11.4万亩高效节水灌溉项目、云南祥云5万亩高效节水灌溉PPP项目、天津武清区污水处理综合治理项目、邹城市农村供水巩固提升工程PPP项目，甘肃省武山县西梁灌区农业水价综合改革项目、内蒙古呼伦贝尔信息化建设工程、敦煌市农业技术推广中心水肥一体化核心示范区温室物联网示范区、浙江省钱塘江河长制管理信息系统、衢州市河长信息管理系统平台建设等，这些项目得到了广大用户的一致好评。公司始终秉承合作双赢理念，为客户量身定制高质量的产品与服务，致力成为客户可信赖的合作伙伴。</div>
+                    <div class="paragraph paragraph3">大禹慧水科技将持之以恒的专注于人类与水的和谐发展，聚焦水资源保护和水环境改善，肩负起水利信息化发展的重任，矢志成为最有价值的解决方案提供商、系统建设集成商、运行维护服务商。</div> 
                 </div>
              </main>
          </section>
@@ -121,27 +118,27 @@ export default {
     },
     {
         num:"02",
-        img:require("../../assets/carousel2.jpg"),
-        data:"通过与中国水利水电科学研究院、清华大学、日本筑波大学等进行战略合作和自主研发，形成了一套自己特有的覆盖“三农三水”全领域、全产业链、全生命周期的自动化信息集成处理系统，并已成功运用到各类项目中；",
-        word:"技术研发优势"
+        img:require("../../assets/talent.jpg"),
+        data:"中国国内最顶尖高科技制造业信息化团队，平均10+年行业经验，其中研发人员占比40%，95%以上为本科学历，同时高薪聘请北、上、广高新尖人才，一流的人才，一流的团队，才能打造一流的产品与服务;",
+        word:"人才优势"
     },
     {
         num:"03",
-        img:require("../../assets/carousel3.jpg"),
-        data:"通过与中国水利水电科学研究院、清华大学、日本筑波大学等进行战略合作和自主研发，形成了一套自己特有的覆盖“三农三水”全领域、全产业链、全生命周期的自动化信息集成处理系统，并已成功运用到各类项目中；",
-        word:"技术研发优势"
+        img:require("../../assets/brand.jpg"),
+        data:"集团深耕水利行业20年，公司依托集团行业龙头地位和上市公司平台资源，包括水利水电工程施工总承包壹级，水利工程咨询甲级和设计、勘察、水资源论证等八项乙级资质作为强大业务支撑力量，充分发挥公司品牌优势；",
+        word:"品牌优势"
     },
     {
         num:"04",
-        img:require("../../assets/carousel1.jpg"),
-        data:"通过与中国水利水电科学研究院、清华大学、日本筑波大学等进行战略合作和自主研发，形成了一套自己特有的覆盖“三农三水”全领域、全产业链、全生命周期的自动化信息集成处理系统，并已成功运用到各类项目中；",
-        word:"技术研发优势"
+        img:require("../../assets/market.jpg"),
+        data:"完善有效的渠道建设不仅是市场开拓的要求，更对项目后期的运维具有重要意义，依托集团公司已遍及全国及30多个境外国家的营销网络，与同行业公司的业务大多局限在注册地省区内相比，具有明显的竞争优势；",
+        word:"市场优势"
     },
     {
         num:"05",
-        img:require("../../assets/carousel3.jpg"),
-        data:"通过与中国水利水电科学研究院、清华大学、日本筑波大学等进行战略合作和自主研发，形成了一套自己特有的覆盖“三农三水”全领域、全产业链、全生命周期的自动化信息集成处理系统，并已成功运用到各类项目中；",
-        word:"技术研发优势"
+        img:require("../../assets/operation.jpg"),
+        data:"依托集团扎根水利20年持续积累的大量施工经验和不断树立的精品工程，尤其是云南农业高效节水“陆良模式”在全国范围内得到的推广和应用，这一系列的行业经验与口碑，奠定了公司强大的后期运维能力与竞争优势；",
+        word:"运维优势"
     },
    ],
    currentIndex:1,//当前的轮播页
@@ -253,6 +250,47 @@ export default {
                     margin: auto;
                 }
             }
+            .headTitle{
+                width: 100%; 
+                margin-top:36px;
+                margin-bottom: 32px;  
+                img{
+                    display: block;
+                    margin: auto;
+                }
+                h5{
+                    text-align: center;
+                    color: #8f8f8f;
+                    margin-top: 11px;
+                    font-size: 14PX;
+                }
+                h1{
+                    text-align: center;
+                    color: #8f8f8f;
+                    font-size: 18px;
+                    margin:8px auto 28px;
+                }
+                .sannong{
+                    width: 100%;
+                    img{
+                        display: block;
+                        margin:0 auto 36px;
+                    }
+                }
+            }
+            .introduction{
+                width: 90%;
+                margin:0 auto 69px;
+                .paragraph{
+                    text-indent: 2em;
+                    font-size: 14px;
+                    color:#636363;
+                    line-height: 24px;
+                }
+                .paragraph1,.paragraph2{
+                    margin-bottom: 28px;
+                }
+            }
             .content{
                 width: 100%;
                 display: flex;
@@ -281,12 +319,13 @@ export default {
                         background: #2463cc;
                         top:83px;
                         .picTitle{
-                            font-size: 36px;
+                            font-size: 32px;
                             color:#fff;
                             text-align: center;
+                            margin-top: 10px;
                         }
                         .picEnTitle{
-                            font-size: 18px;
+                            font-size: 16px;
                             color:#fff;
                             text-align: center;
                         }
@@ -397,29 +436,6 @@ export default {
                             }
                        }
                    }
-                }
-            }
-            .introduction{
-                width: 100%;
-                display: flex;
-                margin-bottom: 70px;
-                .introductionLeft{
-                    width: 511px;
-                    height: 331px;
-                    margin-right: 76px;
-                    img{
-                        width: 100%;
-                    }
-                }
-                .introductionRight{
-                    width: 614px;
-                    height: 80px;
-                    font-size: 14px;
-                    line-height: 24px;
-                    color:#636363;
-                    .paragraph1{
-                        margin-bottom: 66px;
-                    }
                 }
             }
         }
