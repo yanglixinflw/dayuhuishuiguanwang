@@ -104,17 +104,6 @@ export default {
         &:hover {
           background-color: transparent;
         }
-        a::after{
-            content: '';
-            width: 0;
-            height: 2px;
-            background-color: #2463cc;
-            position: absolute;
-            left: 54.2%;
-            bottom: 0px;
-            transform: translateX(-50%);
-            transition: .3s linear;
-        }
         a {
           display: block;
           text-decoration: none;
@@ -127,9 +116,6 @@ export default {
           }
           &:hover{
             font-weight: bold;
-          }
-          &:hover::after{
-            width: 56px;
           }
         }
       }
@@ -215,17 +201,6 @@ export default {
         &:hover {
           background-color: transparent;
         }
-         a::after{
-            content: '';
-            width: 0;
-            height: 2px;
-            background-color: #fff;
-            position: absolute;
-            left: 54.2%;
-            bottom: 0px;
-            transform: translateX(-50%);
-            transition: .3s linear;
-          }
         a {
           display: block;
           text-decoration: none;
@@ -237,9 +212,6 @@ export default {
           }
           &:hover{
             font-weight: bold;
-          }
-          &:hover::after{
-            width: 56px;
           }
         }
       }
