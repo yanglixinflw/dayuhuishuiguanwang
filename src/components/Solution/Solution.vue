@@ -27,8 +27,14 @@ export default {
           activeIndex:window.location.pathname.split('/')[2] || "0",
       }
     },
-    mounted:function(){
-       
+    watch:{
+        $route:{
+            handler:function(val,oldVal){
+                this.activeIndex=window.location.pathname.split('/')[2]
+            }
+        },
+        //深度观察监听
+        deep:true
     },
     methods:{
         handleSelect(key, keyPath) {

@@ -26,10 +26,13 @@
     </div>
     <div class="footNavList">
       <ul>
-        <li>农村高效节水工程</li>
+        <li v-for="item in solutionNavMenu" :key="item.path">
+          <router-link :to="{path: '/solution/' + item.path}">{{item.displayName}}</router-link>
+        </li>
+        <!-- <li>农村高效节水工程</li>
         <li>农村饮水安全工程</li>
         <li>污水处理系统工程</li>
-        <li>智慧河长制系统工程</li>
+        <li>智慧河长制系统工程</li> -->
       </ul>
     </div>
   </div>
@@ -40,8 +43,12 @@ export default {
   name: "CommonFooter",
   data: function() {
     return {
-      // isIndex:false
-      // isIndex:true
+      solutionNavMenu:[
+        {displayName:'农村高效节水工程',path:'0'},
+        {displayName:'农村饮水安全工程',path:'1'},
+        {displayName:'污水处理系统工程',path:'2'},
+        {displayName:'智慧河长制系统工程',path:'3'},
+      ],
       pathNameChange:""
     };
   },
@@ -131,12 +138,18 @@ export default {
       li {
         width: 100%;
         border-left: 1px solid #c0c0c0;
-        font-size: 14px;
-        color: #979797;
-        text-align: center;
+        
         &:hover {
           color: #2463cc;
           cursor: pointer;
+        }
+        a{
+          text-decoration: none;
+          display: inline-block;
+          width: 100%;
+          font-size: 14px;
+          color: #979797;
+          text-align: center;
         }
       }
       li:first-child {
