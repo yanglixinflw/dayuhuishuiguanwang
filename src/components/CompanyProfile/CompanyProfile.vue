@@ -212,7 +212,7 @@ export default {
   },
   stop() {
    window.clearInterval(this.timer)
-   this.timer = null
+   this.timer = null;
   }
  }
 }
