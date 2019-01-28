@@ -32,7 +32,7 @@ export default {
 </script>
 <style lang="less" scoped>
     .proContent{
-        width: 67.26%;
+        width: 1280px;
         margin:0 auto;
         position: relative;
         top: -100px;
@@ -52,7 +52,8 @@ export default {
             height: 136px;
             box-shadow: 0px 0px 48px -21px #1182ED;
             box-sizing: border-box;
-            padding: 30px 38px;
+            padding: 30px 38px 0;
+            overflow: hidden;
             .proPoint{
                 margin-top:14px;
                 margin-left: 44px;
@@ -96,6 +97,18 @@ export default {
             .itemInfo:nth-child(1),.itemInfo:nth-child(2),.itemInfo:nth-child(3){
                 margin-top: 0px;
             } 
+        }
+    }
+    @media(max-width:1330px){
+        .proContent{
+            .proInfo{
+                padding: 15px 38px 0;
+            }
+        }
+    }
+    @media(max-width: 1299px){
+        .proContent{
+            width: 1200px;
         }
     }
 </style>

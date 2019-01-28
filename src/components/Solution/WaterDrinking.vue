@@ -67,7 +67,7 @@ export default {
 </script>
 <style lang="less" scoped>
     .proContent{
-        width: 67.26%;
+        width: 1280px;
         margin:0 auto;
         position: relative;
         top: -100px;
@@ -214,6 +214,11 @@ export default {
                     width: 50.83%;
                 }
             }
+        }
+    }
+    @media(max-width: 1299px){
+        .proContent{
+            width: 1200px;
         }
     }
 </style>

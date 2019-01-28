@@ -36,9 +36,6 @@ export default {
         //深度观察监听
         deep:true
     },
-    mounted:function(){
-       
-    },
     methods:{
         handleSelect(key, keyPath) {
             // console.log()
