@@ -54,7 +54,11 @@ export default {
       handler:function(val,oldVal){
         //do Something 判断是否为主页
         let pathname = val.path;
-        this.headClassName=pathname=='/'?"isIndexHead":"head"
+        this.headClassName=pathname=='/'?"isIndexHead":"head";
+        this.activeIndex=window.location.pathname
+        if(window.location.pathname.indexOf("/solution")>-1){
+          this.activeIndex="/solution"
+        }
         //迫使 Vue 实例重新渲染。
         this.$forceUpdate()
       },
