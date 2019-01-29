@@ -90,7 +90,7 @@
   }
   .el-carousel{
     position: relative;
-  top:-68px;
+    top:-68px;
   }
   .el-carousel__indicator {
     padding: 12px 20px;
@@ -357,7 +357,7 @@ export default {
       imgUrl: [
         require("../../assets/carousel1.jpg"),
         require("../../assets/carousel2.jpg"),
-        require("../../assets/carousel3.jpg")
+        // require("../../assets/carousel3.jpg")
       ],
       // 轮播图高度
       carouselHeight: "",
@@ -411,18 +411,21 @@ export default {
   mounted() {
     // 初始化轮播高度
     let clientWidth = document.documentElement.clientWidth;
-    this.carouselHeight = ((clientWidth * 880) / 1900).toFixed(1) + "px";
+    let clientHeight=document.documentElement.clientHeight
+    // this.carouselHeight = ((clientWidth * 880) / 1900).toFixed(1) + "px";
+    this.carouselHeight = ((clientWidth * clientHeight) / 1900).toFixed(1) + "px";
     // this.transitionWidth = clientWidth+"px";
+    // console.log(clientHeight)
     const that = this;
     window.onresize = () => {
       return (() => {
         let clientWidth = document.body.clientWidth;
-        // console.log(clientWidth)
+        
         if (clientWidth >= 1200) {
-          that.carouselHeight = ((clientWidth * 880) / 1900).toFixed(1) + "px";
+          that.carouselHeight = ((clientWidth * clientHeight) / 1900).toFixed(1) + "px";
           // that.transitionWidth=clientWidth+"px"
         } else {
-          that.carouselHeight = ((1200 * 880) / 1900).toFixed(1) + "px";
+          that.carouselHeight = ((1200 * clientHeight) / 1900).toFixed(1) + "px";
           // that.transitionWidth="1200px"
         }
       })();
