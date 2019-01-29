@@ -46,13 +46,13 @@
         <div class="colorStroke"></div>
             <div class="itemXiangYun">
                 <div class="xiangyunInfo">
-                    <div class="part1">总投资
-                        <span>1.48</span>亿元
+                    <div class="part1">估算投资总额
+                        <span>19</span>亿元
                     </div>
-                    <div class="part2">高效灌溉面积
-                        <span>5</span>万亩
+                    <div class="part2">涉及水库共
+                        <span>14</span>万亩
                     </div>
-                    <p class="part3">缓解水资源供需矛盾，提升农业 抗旱保守能利</p>
+                    <p class="part3">加速推进黔东南州“十三·五”规划拟建骨干水源工程项目助黔东南州经济社会的快速发展</p>
                 </div>
                 <img src="../../assets/qiandong.png" alt="xiangyun">
             </div>
@@ -168,16 +168,16 @@ export default {
             .itemXiangYun{
                 display: flex;
                 .xiangyunInfo{
-                    width: 335px;
+                    width: 395px;
                     height: 400px;
                     background-color: #fff;
-                    margin-left: 12.25%;
+                    margin-left: 200px;
                     box-shadow: 0px 0px 48px -21px #1182ED;
                     overflow: hidden;
                     text-overflow:ellipsis;
                     .part1{
                         margin-top:104px;
-                        margin-left:58px;
+                        margin-left:30px;
                         font-size: 16px;
                         color:#757575;
                         font-weight: 500;
@@ -190,7 +190,7 @@ export default {
                     }
                     .part2{
                         margin-top:48px;
-                        margin-left:58px;
+                        margin-left:30px;
                         font-size: 16px;
                         color:#757575;
                         font-weight: 500;
@@ -203,7 +203,7 @@ export default {
                     }
                     .part3{
                         margin-top:85px;
-                        margin-left: 58px;
+                        margin-left: 30px;
                         margin-right: 34px;
                         font-size: 16px;
                         color:#757575;
@@ -211,7 +211,7 @@ export default {
                     }
                 }
                 img{
-                    width: 50.83%;
+                    width: 610px;
                 }
             }
         }
