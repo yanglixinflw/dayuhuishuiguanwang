@@ -422,7 +422,7 @@ export default {
         let clientWidth = document.body.clientWidth;
         
         if (clientWidth >= 1200) {
-          that.carouselHeight = ((clientWidth * clientHeight) / 1900).toFixed(1) + "px";
+          that.carouselHeight = ((clientWidth * clientHe0ight) / 1900).toFixed(1) + "px";
           // that.transitionWidth=clientWidth+"px"
         } else {
           that.carouselHeight = ((1200 * clientHeight) / 1900).toFixed(1) + "px";
