@@ -53,7 +53,7 @@
                         </ul>
                         <!-- 轮播图 -->
                         <ul class="container" :style="containerStyle">
-                            <li> 
+                            <li @mouseenter="stop" @mouseleave="play"> 
                                 <div class="img">
                                     <img :src="sliders[sliders.length - 1].img" alt=""/>
                                      <div class="instructions">
@@ -64,7 +64,7 @@
                                 <div class="line"></div>
                                 <div class="description">{{sliders[sliders.length - 1].data}}</div>
                             </li>
-                            <li v-for="(item, index) in sliders" :key="index">
+                            <li v-for="(item, index) in sliders" :key="index" @mouseenter="stop" @mouseleave="play">
                                 <div class="img">
                                     <img :src="item.img" alt=""/>
                                     <div class="instructions">
@@ -75,7 +75,7 @@
                                 <div class="line"></div>
                                 <div class="description">{{item.data}}</div>
                             </li>
-                            <li>
+                            <li @mouseenter="stop" @mouseleave="play">
                                 <div class="img">
                                     <img :src="sliders[0].img" alt=""/>
                                     <div class="instructions">

@@ -7,7 +7,6 @@ import WaterSaving from './views/WaterSaving.vue'
 import WaterDrinking from './views/WaterDrinking.vue'
 import PollutedWater from './views/PolluterWater.vue'
 import RiverSystem from './views/RiverSystem.vue'
-import Demo from './views/demo.vue'
 Vue.use(Router)
 let router =new Router({
   mode: 'history',
@@ -62,11 +61,6 @@ let router =new Router({
       path: '/companyProfile',
       name: 'companyProfile',
       component: CompanyProfile
-    },
-    {
-      path: '/demo',
-      name: 'demo',
-      component: Demo
     }
   ]
 })
