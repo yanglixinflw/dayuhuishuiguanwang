@@ -1,9 +1,9 @@
 <template>
-  <div v-bind:class="headClassName">
+  <div class="head">
     <el-row type="flex">
       <el-col :span="10">
         <div class="logoName">
-          <img v-if="headClassName=='isIndexHead'" src="../../assets/logoIndex.png" @click="handleLogoClick" />
+          <img v-if="activeIndex=='/'" src="../../assets/logoIndex.png" @click="handleLogoClick" />
           <img v-else src="../../assets/logo.png" @click="handleLogoClick" />
         </div>
       </el-col>
@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import eventBus from "../../assets/eventBus/eventBus.js";
 export default {
   name: "CommonHead",
   data() {
@@ -34,7 +35,6 @@ export default {
         {displayName:"公司介绍",path:"/companyProfile",id:2},
       ],
       activeIndex: window.location.pathname,
-      headClassName:"",
     };
   },
   methods: {
@@ -46,6 +46,7 @@ export default {
     },
     handleLogoClick() {
       this.activeIndex = "/";
+      eventBus.$emit("passSomeThing", "/");
       this.$router.push("/");
     }
   },
@@ -67,12 +68,16 @@ export default {
     if(window.location.pathname.indexOf("/solution")>-1){
       this.activeIndex="/solution"
     }
-  },
+  }
 };
 </script>
 
 <style lang="less" scoped>
 .head {
+  // display: flex;
+  // position:fixed;
+  // top:0;
+  // background-color: #fff;
   width: 100%;
   height: 68px;
   line-height: 68px;
@@ -104,17 +109,6 @@ export default {
         &:hover {
           background-color: transparent;
         }
-        a::after{
-            content: '';
-            width: 0;
-            height: 2px;
-            background-color: #2463cc;
-            position: absolute;
-            left: 54.2%;
-            bottom: 0px;
-            transform: translateX(-50%);
-            transition: .3s linear;
-        }
         a {
           display: block;
           text-decoration: none;
@@ -128,13 +122,9 @@ export default {
           &:hover{
             font-weight: bold;
           }
-          &:hover::after{
-            width: 56px;
-          }
         }
       }
       .el-menu-item {
-        width: 56px;
         height: 68px;
         line-height: 90px;
         padding: 0;
@@ -165,11 +155,8 @@ export default {
           &:active {
             font-weight: bold;
           }
-          &:hover{
-            font-weight: bold;
-          }
           &:hover::after{
-            width: 56px;
+            // width: 56px;
           }
         }
       }
@@ -182,22 +169,7 @@ export default {
       }
     }
   }
-}
-.isIndexHead {
-  width: 100%;
-  height: 68px;
-  line-height: 68px;
-  position: relative;
-  z-index: 10;
-  .logoName {
-    text-align: center;
-    img {
-      position: relative;
-      top: 20px;
-      cursor: pointer;
-    }
-  }
-  .navMenu {
+  .isIndexNavMenu {
     text-align: center;
     .el-menu--horizontal {
       border-bottom: 0;
@@ -215,17 +187,6 @@ export default {
         &:hover {
           background-color: transparent;
         }
-         a::after{
-            content: '';
-            width: 0;
-            height: 2px;
-            background-color: #fff;
-            position: absolute;
-            left: 54.2%;
-            bottom: 0px;
-            transform: translateX(-50%);
-            transition: .3s linear;
-          }
         a {
           display: block;
           text-decoration: none;
@@ -237,9 +198,6 @@ export default {
           }
           &:hover{
             font-weight: bold;
-          }
-          &:hover::after{
-            width: 56px;
           }
         }
       }
@@ -272,9 +230,6 @@ export default {
           font-size: 14px;
           color: #fff;
           &:active {
-            font-weight: bold;
-          }
-          &:hover{
             font-weight: bold;
           }
           &:hover::after{
@@ -292,7 +247,6 @@ export default {
     }
   }
 }
-  
 @media (max-width: 1159px) {
   .head {
     .navMenu {
@@ -300,9 +254,7 @@ export default {
         margin: 0 52px !important;
       }
     }
-  }
-  .isIndexHead {
-    .navMenuNavMenu{
+    .isIndexNavMenu{
       .el-menu-item {
         margin: 0 52px !important;
       }
